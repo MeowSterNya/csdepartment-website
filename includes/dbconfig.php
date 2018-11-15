@@ -1,15 +1,7 @@
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $db = "csdepartment-website";
-
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password, $db);
-
-  // Check connection
-  if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
-  }
-  echo "Connected successfully";
+// Database Constants - should match those on your development machine
+define("DB_SERVER", "localhost");
+define("DB_USER", "root");
+define("DB_PASSWORD", "");
+define("DB_NAME", "secureapp"); 
 ?>
