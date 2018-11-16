@@ -1,8 +1,10 @@
 <?php
   //Function to Create a session.{
-  function createSession() {
+  function createSession($username,$hashpw) {
     $_SESSION = $_POST;
-    $_SESSION["sessionPass"] = 1;
+    $_SESSION["sessionPass"] = $hashpw.md5($username);
+    $_SESSION["sessionUsPas"] = $hashpw.md5($username);
+    
       //echo "sessionmade";
       session_start();
   }//}End Function createSession.

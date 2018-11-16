@@ -4,7 +4,7 @@ require("includes/authenticate.php");
 
 if(isset($_SESSION["sessionPass"]))
     {
-    if(($_SESSION["sessionPass"])==1)
+    if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
         { ?>
 
 
@@ -84,7 +84,7 @@ else {?>
 
 <script>window.alert("Why are you here? Please Login.");</script> 
 <?php
-  // header("Location:includes/login.php");
+  header("Location:includes/login.php");
 }
 
 ?>

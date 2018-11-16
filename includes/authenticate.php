@@ -9,7 +9,7 @@
       $hashpw = md5($password);
       $result = query("SELECT * FROM users WHERE username = '$username' AND password = '$hashpw' LIMIT 1");
       if (!empty($result)) {
-        createSession();
+        createSession($username,$hashpw);
         $user = $result[0];
         $_SESSION['name'] = $user['username'];
         header("Location: ../index.php"); 
