@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/css.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../favicon.png">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/css.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
   <title>Login</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
   <div class="container h-100">
 
     <div class="row h-100 justify-content-center align-items-center">
-      <form action="authenticate.php" method="post" class="col-12">
+      <form action="includes/authenticate.php" method="post" class="col-12">
         <h3 class="text-center">Department of Computer Science</h3>
         <h4 class="text-center">Admin Login</h4>
         <div class="form-group">
@@ -31,8 +31,8 @@
 
   </div>
 
-  <script src="../js/jquery-3.3.1.min.js"></script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

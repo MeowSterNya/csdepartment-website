@@ -15,7 +15,7 @@ if(isset($_SESSION["sessionPass"]))
             {
             
             killSession();
-            header("Location:includes/login");
+            header("Location:index");
         } ?>
 
 <!DOCTYPE html>
@@ -92,15 +92,13 @@ if(isset($_SESSION["sessionPass"]))
   else {?>
     <script>window.alert("Hmmm Whats up doc?, Try Logging in.");</script> 
     <?php
-    header("Location:includes/login");
+    include ("includes/login.php");
   }
 
 }
 
-  else {?>
-    <script>window.alert("Why are you here? Please Login.");</script> 
-    <?php
-    header("Location:includes/login");
+  else {
+    include ("includes/login.php");
   }
 
 ?>
