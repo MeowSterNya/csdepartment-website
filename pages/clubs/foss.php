@@ -62,9 +62,10 @@ require("../../includes/authenticate.php");
         </form>
         <?php     }
         } 
-        else 
-        ?>
+        else
         {
+        ?>
+        
         <form action="../../index.php" method="post" class="form-inline my-2 my-lg-0">
             <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login"    type="submit">Login</button></form>
    <?php } ?>
