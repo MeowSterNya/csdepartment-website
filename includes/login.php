@@ -14,7 +14,7 @@
   <div class="container h-100">
 
     <div class="row h-100 justify-content-center align-items-center">
-      <form action="includes/authenticate.php" method="post" class="col-12">
+      <form action="authenticate.php" method="post" class="col-12">
         <h3 class="text-center">Department of Computer Science</h3>
         <h4 class="text-center">Admin Login</h4>
         <div class="form-group">
@@ -26,6 +26,7 @@
           <input type="password" class="form-control" id="password" name="password" placeholder="Password">
         </div>
         <button type="submit" name="login" class="btn btn-success">Login</button>
+        <a class="btn btn-danger" href="./index" role="button">Cancel</a>
       </form>
     </div>
 
