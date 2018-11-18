@@ -1,3 +1,6 @@
+<?php
+require("../../includes/authenticate.php");  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,12 +51,25 @@
           <a class="nav-link" href="../../pages/alumni">Alumni</a>
         </li>
       </ul>
-      <form method="post" class="form-inline my-2 my-lg-0 mx-2">
-        <button class="btn btn-outline-success my-2 my-sm-0" name="logout" type="submit">Login</button>
-      </form>
-      <form method="post" class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>
-      </form>
+        <?php
+        if(isset($_SESSION["sessionPass"]))
+        
+            if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
+                sessionExpire();
+        ?>
+        <form method="post" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>
+        </form>
+        <?php     }
+        } 
+        else 
+        ?>
+
+        <form action="../../index.php" method="post" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login"    type="submit">Login</button>
+        </form>
+
+        <?php } ?>
     </div>
   </nav>
 

@@ -17,7 +17,7 @@
 
 function sessionExpire()
     {
-        $expireAfter = 0.25;
+        $expireAfter = 5;
         if(isset($_SESSION['last_action']))
         {
             $secondsInactive = time() - $_SESSION['last_action'];

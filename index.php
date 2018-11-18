@@ -6,19 +6,9 @@ require("includes/authenticate.php");
 if(isset($_SESSION["sessionPass"]))
     {
     if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
-        { ?>
-
-
-        <?php sessionExpire(); ?>
-
-        
-      <?php  if(isset($_POST["logout"]))
-            {
-            
-            killSession();
-            header("Location:index");
-        } ?>
-
+        { 
+            sessionExpire();   
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,9 +59,6 @@ if(isset($_SESSION["sessionPass"]))
           <a class="nav-link" href="pages/alumni">Alumni</a>
         </li>
       </ul>
-    <!--  <form method="post" class="form-inline my-2 my-lg-0 mx-2">
-        <button class="btn btn-outline-success my-2 my-sm-0" name="logout" type="submit">Login</button>
-      </form> -->
       <form method="post" class="form-inline my-2 my-lg-0">
         <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>
       </form>
@@ -100,11 +87,12 @@ if(isset($_SESSION["sessionPass"]))
 
   else { 
     
- if(isset($_POST["nav-login"])==NULL)
-    { ?> 
-    
-
-
+      if(isset($_POST["nav-login"]))
+        {
+          include ("includes/login.php");  
+        } 
+        else{
+    ?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,10 +164,7 @@ if(isset($_SESSION["sessionPass"]))
       
  
       
-      if(isset($_POST["nav-login"]))
-        {
-            include ("includes/login.php");  
-      }
+     
       
   }
 
