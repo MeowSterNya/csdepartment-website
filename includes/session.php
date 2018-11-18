@@ -17,22 +17,18 @@
 
 function sessionExpire()
     {
-        $expireAfter = 5;
+        $expireAfter = 0.25;
         if(isset($_SESSION['last_action']))
         {
             $secondsInactive = time() - $_SESSION['last_action'];
             $expireAfterSeconds = $expireAfter * 60;
-            
             if($secondsInactive >= $expireAfterSeconds)
             {
                 killSession();
-                header("Refresh:0; url=includes/login.php");  
-                
-            }
-        
-        }
-        
-        
+                ?>
+                <script>window.alert("You have been logged out due to inactive, Try Logging in.");</script> 
+            <?php   
+            } 
+        }  
     }
-
 ?>

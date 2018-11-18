@@ -27,13 +27,12 @@
         createSession($username,$hashpw);
         $user = $result[0];
         $_SESSION['name'] = $user['username'];
-        header("Location: ../index"); 
-        return 1;
+        $_SESSION['last_action'] = time();
+        header("Location:../index"); 
       }
       else {
         echo "<p>Error: Your username or password is incorrect. Please re-enter your credentials.</p>";
         echo "<p><a href='login'>Try Again</a></p>";
-        return 0;
       }
     }
   }
@@ -53,7 +52,6 @@
         {
             killSession();
             //header("Location:index");
-            return 1;
         }
     }
 ?>
