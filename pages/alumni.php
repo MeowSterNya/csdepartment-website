@@ -53,8 +53,9 @@ require("../includes/authenticate.php");
       </ul>
         <?php
         if(isset($_SESSION["sessionPass"]))
-        
+        {
             if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
+            {
                 sessionExpire();
         ?>
         <form method="post" class="form-inline my-2 my-lg-0">
