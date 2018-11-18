@@ -23,7 +23,7 @@ if(isset($_SESSION["sessionPass"]))
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index">
+    <a class="navbar-brand" href="">
       <img src="media/cslogo.svg" width="30" height="30" class="d-inline-block align-top" alt="Department of Computer Science Logo">
       Department of Computer Science
     </a>
@@ -34,7 +34,7 @@ if(isset($_SESSION["sessionPass"]))
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index">Home</a>
+          <a class="nav-link" href="">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="pages/programmes">Programmes Offered</a>
@@ -66,7 +66,7 @@ if(isset($_SESSION["sessionPass"]))
   </nav>
 
   <div class="container">
-      
+
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
@@ -107,7 +107,7 @@ if(isset($_SESSION["sessionPass"]))
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index">
+    <a class="navbar-brand" href="">
       <img src="media/cslogo.svg" width="30" height="30" class="d-inline-block align-top" alt="Department of Computer Science Logo">
       Department of Computer Science
     </a>
@@ -118,7 +118,7 @@ if(isset($_SESSION["sessionPass"]))
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index">Home</a>
+          <a class="nav-link" href="">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="pages/programmes">Programmes Offered</a>
@@ -133,10 +133,6 @@ if(isset($_SESSION["sessionPass"]))
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="pages/clubs/cyber-security">Cyber Security</a>
             <a class="dropdown-item" href="pages/clubs/foss">Free and Open Source Software</a>
-            <a class="dropdown-item" href="pages/clubs/girls-in-ict">Girls in Computing</a>
-            <a class="dropdown-item" href="pages/clubs/robotics">Robotics</a>
-            <a class="dropdown-item" href="pages/clubs/social-media">Social Media</a>
-            <a class="dropdown-item" href="pages/clubs/tech-ed-revolution">Tech Ed Revolution</a>
           </div>
         </li>
         <li class="nav-item">
@@ -150,7 +146,7 @@ if(isset($_SESSION["sessionPass"]))
   </nav>
 
   <div class="container">
-      
+
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>

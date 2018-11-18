@@ -15,7 +15,7 @@ require("../includes/authenticate.php");
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="../index">
+    <a class="navbar-brand" href="../">
       <img src="../media/cslogo.svg" width="30" height="30" class="d-inline-block align-top" alt="Department of Computer Science Logo">
       Department of Computer Science
     </a>
@@ -26,7 +26,7 @@ require("../includes/authenticate.php");
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="../index">Home</a>
+          <a class="nav-link" href="../">Home</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="programmes">Programmes Offered</a>
@@ -41,10 +41,6 @@ require("../includes/authenticate.php");
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="clubs/cyber-security">Cyber Security</a>
             <a class="dropdown-item" href="clubs/foss">Free and Open Source Software</a>
-            <a class="dropdown-item" href="clubs/girls-in-ict">Girls in Computing</a>
-            <a class="dropdown-item" href="clubs/robotics">Robotics</a>
-            <a class="dropdown-item" href="clubs/social-media">Social Media</a>
-            <a class="dropdown-item" href="/clubs/tech-ed-revolution">Tech Ed Revolution</a>
           </div>
         </li>
         <li class="nav-item">
