@@ -16,8 +16,7 @@ if(isset($_SESSION["sessionPass"]))
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/fontawesome-brands.min.css" rel="stylesheet">
-  <link href="css/fontawesome-solid.min.css" rel="stylesheet">
+  <link href="css/fontawesome-all.min.css" rel="stylesheet">
   <link href="css/css.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <title>Department of Computer Science</title>
@@ -141,8 +140,8 @@ if(isset($_SESSION["sessionPass"]))
       <div class="card-body">
         <h5 class="card-title">Get in Contact with Us</h5>
         <p class="card-text">Choose any of the options below</p>
-        <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button">Email</a>
-        <a class="btn btn-primary" href="tel:2222222" role="button">Call</a>
+        <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button"><i class="fas fa-envelope"></i> csdept@uni.com</a>
+        <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
       </div>
     </div>
   </div>
@@ -179,8 +178,7 @@ if(isset($_SESSION["sessionPass"]))
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/fontawesome-brands.min.css" rel="stylesheet">
-  <link href="css/fontawesome-solid.min.css" rel="stylesheet">
+  <link href="css/fontawesome-all.min.css" rel="stylesheet">
   <link href="css/css.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <title>Department of Computer Science</title>
@@ -256,7 +254,6 @@ if(isset($_SESSION["sessionPass"]))
     <div class="container">
       <h1 class="display-4">About Us</h1>
       <p class="lead">*insert cool about info here*</p>
-      <i class="fas fa-envelope"></i>
     </div>
   </div>
 
@@ -290,8 +287,8 @@ if(isset($_SESSION["sessionPass"]))
       <div class="card-body">
         <h5 class="card-title">Get in Contact with Us</h5>
         <p class="card-text">Choose any of the options below</p>
-        <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button">Email</a>
-        <a class="btn btn-primary" href="tel:2222222" role="button">Call</a>
+        <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button"><i class="fas fa-envelope"></i> csdept@uni.com</a>
+        <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
       </div>
     </div>
   </div>
