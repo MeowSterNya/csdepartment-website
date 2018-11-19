@@ -14,7 +14,7 @@
   <div class="container h-100">
 
     <div class="row h-100 justify-content-center align-items-center">
-      <form action="authenticate.php" method="post" class="col-12">
+      <form action="includes/authenticate.php" method="post" class="col-12">
         <h3 class="text-center">Department of Computer Science</h3>
         <h4 class="text-center">Admin Login</h4>
         <div class="form-group">
