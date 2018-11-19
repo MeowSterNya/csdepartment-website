@@ -145,13 +145,75 @@ if(isset($_SESSION["sessionPass"]))
     </div>
   </nav>
 
-  <div class="container">
+  <div id="carousel1" class="carousel slide carousel-fade">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel1" data-slide-to="1"></li>
+      <li data-target="#carousel1" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="media/img1.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="media/img2.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="media/img3.jpg" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">About Us</h1>
+      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+  </div>
+
+  <div class="card-group">
+    <div class="card">
+      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Programmes Offered</h5>
+        <p class="card-text">View our academic programs</p>
+        <a href="pages/programmes" class="btn btn-primary">Take me there!</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Our Staff</h5>
+        <p class="card-text">Meet some of our staff</p>
+        <a href="pages/staff" class="btn btn-primary">Sure, why not?</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Some of our Alumni</h5>
+        <p class="card-text">Meet some of our past graduates from the Department of Computer Science</p>
+        <a href="pages/alumni" class="btn btn-primary">Sounds interesting...</a>
+      </div>
+    </div>
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script>
+    $('.carousel').carousel({
+      interval: 3000
+    })
+  </script>
 </body>
 </html> 
  
