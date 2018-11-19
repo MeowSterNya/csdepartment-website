@@ -5,3 +5,17 @@ html, body {
 .jumbotron {
   margin-bottom: 0;
 }
+
+.bg-image {
+  background-image: url("../media/bg-img.jpg");
+  background-color: #121212;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+.logo {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}

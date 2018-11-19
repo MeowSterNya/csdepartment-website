@@ -9,24 +9,27 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <title>Login</title>
 </head>
-<body>
+<body class="bg-image">
 
   <div class="container h-100">
-
+    
     <div class="row h-100 justify-content-center align-items-center">
-      <form action="includes/authenticate.php" method="post" class="col-12">
-        <h3 class="text-center">Department of Computer Science</h3>
-        <h4 class="text-center">Admin Login</h4>
+      <form action="includes/authenticate.php" method="post" class="col-5">
+        <img class="logo mx-auto" src="media/cslogo.svg" alt="Department of Computer Science Logo">
+        <h3 style="color:white" class="text-center">Department of Computer Science</h3>
+        <h4 style="color:white" class="text-center">Admin Login</h4>
         <div class="form-group">
-          <label for="username">Username</label>
+          <label style="color:white" for="username">Username</label>
           <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label style="color:white" for="password">Password</label>
           <input type="password" class="form-control" id="password" name="password" placeholder="Password">
         </div>
-        <button type="submit" name="login" class="btn btn-success">Login</button>
-        <a class="btn btn-danger" href="./index" role="button">Cancel</a>
+        <div class="text-center">
+          <button type="submit" name="login" class="btn btn-block btn-success">Login</button>
+          <a class="btn btn-block btn-danger" href="./index" role="button">Cancel</a>
+        </div>
       </form>
     </div>
 

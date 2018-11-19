@@ -16,6 +16,8 @@ if(isset($_SESSION["sessionPass"]))
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/fontawesome-brands.min.css" rel="stylesheet">
+  <link href="css/fontawesome-solid.min.css" rel="stylesheet">
   <link href="css/css.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <title>Department of Computer Science</title>
@@ -43,20 +45,30 @@ if(isset($_SESSION["sessionPass"]))
           <a class="nav-link" href="pages/staff">Staff</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="adminForms" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Clubs
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="pages/clubs/cyber-security">Cyber Security</a>
             <a class="dropdown-item" href="pages/clubs/foss">Free and Open Source Software</a>
-            <a class="dropdown-item" href="pages/clubs/girls-in-ict">Girls in Computing</a>
-            <a class="dropdown-item" href="pages/clubs/robotics">Robotics</a>
-            <a class="dropdown-item" href="pages/clubs/social-media">Social Media</a>
-            <a class="dropdown-item" href="pages/clubs/tech-ed-revolution">Tech Ed Revolution</a>
           </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="pages/alumni">Alumni</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin Forms
+          </a>
+          <div class="dropdown-menu" aria-labelledby="adminForms">
+            <a class="dropdown-item" href="functions/">Staff</a>
+            <a class="dropdown-item" href="functions/">Undergraduate Research</a>
+            <a class="dropdown-item" href="functions/">Programme/Courses</a>
+            <a class="dropdown-item" href="functions/">Department Activity</a>
+            <a class="dropdown-item" href="functions/">Alumni</a>
+            <a class="dropdown-item" href="functions/">Club</a>
+            <a class="dropdown-item" href="functions/">Staff Research</a>
+          </div>
         </li>
       </ul>
       <form method="post" class="form-inline my-2 my-lg-0">
@@ -65,8 +77,74 @@ if(isset($_SESSION["sessionPass"]))
     </div>
   </nav>
 
-  <div class="container">
+  <div id="carousel1" class="carousel slide carousel-fade">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel1" data-slide-to="1"></li>
+      <li data-target="#carousel1" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="media/img1.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="media/img2.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="media/img3.jpg" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">About Us</h1>
+      <p class="lead">*insert cool about info here*</p>
+    </div>
+  </div>
+
+  <div class="card-group">
+    <div class="card">
+      <img class="card-img-top" src="media/img4.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Programmes Offered</h5>
+        <p class="card-text">View our academic programs</p>
+        <a href="pages/programmes" class="btn btn-primary">Take me there!</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="media/img5.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Our Staff</h5>
+        <p class="card-text">Meet some of our staff</p>
+        <a href="pages/staff" class="btn btn-primary">Sure, why not?</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="media/img6.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Some of our Alumni</h5>
+        <p class="card-text">Meet some of our past graduates</p>
+        <a href="pages/alumni" class="btn btn-primary">How inspiring</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="media/img7.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Get in Contact with Us</h5>
+        <p class="card-text">Choose any of the options below</p>
+        <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button">Email</a>
+        <a class="btn btn-primary" href="tel:2222222" role="button">Call</a>
+      </div>
+    </div>
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
@@ -101,6 +179,8 @@ if(isset($_SESSION["sessionPass"]))
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/fontawesome-brands.min.css" rel="stylesheet">
+  <link href="css/fontawesome-solid.min.css" rel="stylesheet">
   <link href="css/css.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <title>Department of Computer Science</title>
@@ -175,13 +255,14 @@ if(isset($_SESSION["sessionPass"]))
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">About Us</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      <p class="lead">*insert cool about info here*</p>
+      <i class="fas fa-envelope"></i>
     </div>
   </div>
 
   <div class="card-group">
     <div class="card">
-      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+      <img class="card-img-top" src="media/img4.jpg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Programmes Offered</h5>
         <p class="card-text">View our academic programs</p>
@@ -189,7 +270,7 @@ if(isset($_SESSION["sessionPass"]))
       </div>
     </div>
     <div class="card">
-      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+      <img class="card-img-top" src="media/img5.jpg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Our Staff</h5>
         <p class="card-text">Meet some of our staff</p>
@@ -197,11 +278,20 @@ if(isset($_SESSION["sessionPass"]))
       </div>
     </div>
     <div class="card">
-      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+      <img class="card-img-top" src="media/img6.jpg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Some of our Alumni</h5>
-        <p class="card-text">Meet some of our past graduates from the Department of Computer Science</p>
-        <a href="pages/alumni" class="btn btn-primary">Sounds interesting...</a>
+        <p class="card-text">Meet some of our past graduates</p>
+        <a href="pages/alumni" class="btn btn-primary">How inspiring</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="media/img7.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Get in Contact with Us</h5>
+        <p class="card-text">Choose any of the options below</p>
+        <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button">Email</a>
+        <a class="btn btn-primary" href="tel:2222222" role="button">Call</a>
       </div>
     </div>
   </div>
