@@ -1,7 +1,5 @@
 <?php
-
 require("includes/authenticate.php");
-
 if(isset($_SESSION["sessionPass"]))
     {
     if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
@@ -296,7 +294,7 @@ if(isset($_SESSION["sessionPass"]))
   <script src="js/bootstrap.min.js"></script>
   <script>
     $('.carousel').carousel({
-      interval: 1500,
+      interval: 2000,
       wrap: true
     });
   </script>

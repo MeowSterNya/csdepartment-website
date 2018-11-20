@@ -17,7 +17,7 @@
 
 function sessionExpire()
     {
-        $expireAfter = 0.25;
+        $expireAfter = 5;
         if(isset($_SESSION['last_action']))
         {
             $secondsInactive = time() - $_SESSION['last_action'];
@@ -26,7 +26,7 @@ function sessionExpire()
             {
                 killSession();
                 ?>
-                <script>window.alert("You have been logged out due to inactive, Try Logging in.");</script> 
+                <script>window.alert("You have been logged out due to inactivity, Please log in if you wish to continue your activities.");</script> 
             <?php   
             } 
         }  
