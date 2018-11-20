@@ -1,10 +1,8 @@
 <?php
 require("includes/authenticate.php");
-if(isset($_SESSION["sessionPass"]))
-    {
-    if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
-        { 
-            sessionExpire();   
+if(isset($_SESSION["sessionPass"])) {
+  if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"])) {
+    sessionExpire();   
 ?>
 
 <!DOCTYPE html>
@@ -104,43 +102,44 @@ if(isset($_SESSION["sessionPass"]))
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">About Us</h1>
-      <p class="lead">*insert cool about info here*</p>
+      <p class="lead">*insert cool about us info here*</p>
     </div>
   </div>
 
-  <div class="card-group">
-    <div class="card">
-      <img class="card-img-top" src="media/img4.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Programmes Offered</h5>
-        <p class="card-text">View our academic programs</p>
-        <a href="pages/programmes" class="btn btn-primary">Take me there!</a>
-      </div>
+  <br>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Programmes Offered</h1>
+      <p class="lead">*insert programme info here*</p>
     </div>
-    <div class="card">
-      <img class="card-img-top" src="media/img5.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Our Staff</h5>
-        <p class="card-text">Meet some of our staff</p>
-        <a href="pages/staff" class="btn btn-primary">Sure, why not?</a>
-      </div>
+  </div>
+
+  <br>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Alumni</h1>
+      <p class="lead">*insert alumni info here*</p>
     </div>
-    <div class="card">
-      <img class="card-img-top" src="media/img6.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Some of our Alumni</h5>
-        <p class="card-text">Meet some of our past graduates</p>
-        <a href="pages/alumni" class="btn btn-primary">How inspiring</a>
-      </div>
+  </div>
+
+  <br>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Staff</h1>
+      <p class="lead">*insert staff info here*</p>
     </div>
-    <div class="card">
-      <img class="card-img-top" src="media/img7.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Get in Contact with Us</h5>
-        <p class="card-text">Choose any of the options below</p>
-        <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button"><i class="fas fa-envelope"></i> csdept@uni.com</a>
-        <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
-      </div>
+  </div>
+
+  <br>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Contact Us</h1>
+      <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button"><i class="fas fa-envelope"></i> csdept@uni.com</a>
+      <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
     </div>
   </div>
 
@@ -151,20 +150,18 @@ if(isset($_SESSION["sessionPass"]))
 </html> 
         
 <?php }
-  else {?>
+  else {
+?>
     <script>window.alert("Hmmm Whats up doc?, Try Logging in.");</script> 
-    <?php
+<?php
     include ("includes/login.php");
   }
-}
-  else { 
-    
-      if(isset($_POST["nav-login"]))
-        {
-          include ("includes/login.php");  
-        } 
-        else{
-    ?>
+} else 
+  {
+    if(isset($_POST["nav-login"])) {
+      include ("includes/login.php");
+    } else {
+?>
  
 <!DOCTYPE html>
 <html lang="en">
@@ -249,43 +246,36 @@ if(isset($_SESSION["sessionPass"]))
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">About Us</h1>
-      <p class="lead">*insert cool about info here*</p>
+      <p class="lead">*insert cool about us info here*</p>
     </div>
   </div>
 
-  <div class="card-group">
-    <div class="card">
-      <img class="card-img-top" src="media/img4.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Programmes Offered</h5>
-        <p class="card-text">View our academic programs</p>
-        <a href="pages/programmes" class="btn btn-primary">Take me there!</a>
-      </div>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Programmes Offered</h1>
+      <p class="lead">*insert programme info here*</p>
     </div>
-    <div class="card">
-      <img class="card-img-top" src="media/img5.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Our Staff</h5>
-        <p class="card-text">Meet some of our staff</p>
-        <a href="pages/staff" class="btn btn-primary">Sure, why not?</a>
-      </div>
+  </div>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Alumni</h1>
+      <p class="lead">*insert alumni info here*</p>
     </div>
-    <div class="card">
-      <img class="card-img-top" src="media/img6.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Some of our Alumni</h5>
-        <p class="card-text">Meet some of our past graduates</p>
-        <a href="pages/alumni" class="btn btn-primary">How inspiring</a>
-      </div>
+  </div>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Staff</h1>
+      <p class="lead">*insert staff info here*</p>
     </div>
-    <div class="card">
-      <img class="card-img-top" src="media/img7.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Get in Contact with Us</h5>
-        <p class="card-text">Choose any of the options below</p>
-        <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button"><i class="fas fa-envelope"></i> csdept@uni.com</a>
-        <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
-      </div>
+  </div>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Contact Us</h1>
+      <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button"><i class="fas fa-envelope"></i> csdept@uni.com</a>
+      <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
     </div>
   </div>
 
@@ -303,5 +293,5 @@ if(isset($_SESSION["sessionPass"]))
  
 <?php
 }
-  }
+}
 ?>

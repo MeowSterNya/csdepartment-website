@@ -96,11 +96,11 @@ if(isset($_SESSION["sessionPass"]))
         </div>
         <div class="form-group">
           <label for="photo">Add Alumni Photo</label>
-          <input type="file" class="form-control-file" name="photo">
+          <input type="file" class="form-control-file" name="photo" accept=".jpg, .jpeg, .png">
         </div>
         <div class="form-group">
           <label for="research">Add Research Portfolio document</label>
-          <input type="file" class="form-control-file" name="research">
+          <input type="file" class="form-control-file" name="research" accept=".pdf">
         </div>
         <div class="text-center">
           <button type="submit" name="submit" class="btn btn-block btn-success">Submit</button>

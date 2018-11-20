@@ -64,7 +64,7 @@ require("../includes/authenticate.php");
         {
         ?>
         <form action="../index.php" method="post" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login"    type="submit">Login</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login" type="submit">Login</button>
         </form>
 
   <?php } ?>
@@ -81,36 +81,43 @@ require("../includes/authenticate.php");
 
   <div class="card-deck">
     <div class="card text-center">
-      <img class="card-img-top" src="" alt="Card image cap">
+      <img class="card-img-top staff-img mx-auto" src="../media/cslogo.svg" alt="alumni picture">
       <div class="card-body">
         <h5 class="card-title">insert name using php</h5>
         <p class="card-text">insert age using php</p>
       </div>
       <div class="card-footer">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#more">
-          More...
-        </button>
-        <div class="collapse" id="more">
+        <a class="btn btn-primary" data-toggle="collapse" href="#readmore1" role="button">More...</a>
+        <div class="collapse multi-collapse" id="readmore1">
+          <br>
           <div class="card card-body">
-            
+            <p>research doc php goes here</p>
           </div>
         </div>
       </div>
     </div>
     <div class="card text-center">
-      <img class="card-img-top" src="" alt="Card image cap">
+      <img class="card-img-top staff-img mx-auto" src="../media/cslogo.svg" alt="alumni picture">
       <div class="card-body">
         <h5 class="card-title">insert name using php</h5>
         <p class="card-text">insert age using php</p>
       </div>
-      <div class="card-footer"><a href="#" class="btn btn-primary">View more</a></div>
+      <div class="card-footer">
+        <a class="btn btn-primary" data-toggle="collapse" href="#readmore2" role="button">More...</a>
+        <div class="collapse multi-collapse" id="readmore2">
+          <br>
+          <div class="card card-body">
+            <p>research doc php goes here</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
       
   </div>
 
-  <script src="../../js/jquery-3.3.1.min.js"></script>
-  <script src="../../js/popper.min.js"></script>
-  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
 </body>
 </html> 

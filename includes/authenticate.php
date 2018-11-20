@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/css.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../favicon.png">
-</head>
-<body>
-
 <?php
   
   require_once("session.php");
@@ -55,9 +43,3 @@
         }
     }
 ?>
-
-  <script src="../js/jquery-3.3.1.min.js"></script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-</body>
-</html> 
