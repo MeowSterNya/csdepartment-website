@@ -63,7 +63,7 @@ if(isset($_SESSION["sessionPass"]))
             <a class="dropdown-item" href="pages/forms/courses-form">Add Courses</a>
             <a class="dropdown-item" href="pages/forms/activity-form">Add Department Activity</a>
             <a class="dropdown-item" href="pages/forms/programme-form">Add Programme</a>
-            <a class="dropdown-item" href="pages/forms/staff-form">Add Staff & Staff Research</a>
+            <a class="dropdown-item" href="pages/forms/staff-form">Add Staff &amp; Staff Research</a>
             <a class="dropdown-item" href="pages/forms/undergraduate-form">Add Undergraduate Research</a>
           </div>
         </li>
