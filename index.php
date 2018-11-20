@@ -1,16 +1,11 @@
 <?php
 require("includes/authenticate.php");
-<<<<<<< HEAD
+
 if(isset($_SESSION["sessionPass"]))
     {
     if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
         { 
             //sessionExpire();
-=======
-if(isset($_SESSION["sessionPass"])) {
-  if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"])) {
-    sessionExpire();
->>>>>>> origin/master
 ?>
 
 <!DOCTYPE html>
@@ -164,11 +159,13 @@ if(isset($_SESSION["sessionPass"])) {
 <?php
     include ("includes/login.php");
   }
-} else
+}
+else
   {
     if(isset($_POST["nav-login"])) {
       include ("includes/login.php");
-    } else {
+    }
+    else {
 ?>
  
 <!DOCTYPE html>
