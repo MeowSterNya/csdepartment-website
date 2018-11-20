@@ -89,19 +89,13 @@ require("../includes/authenticate.php");
         </tr>
       </thead>
       <tbody>
-        <?php while($row = mysqli_fetch_array($result_set))
-        {
-          ?>
         <tr>
-          <th scope="row"></th>
-            <td><?php echo $row['Name'] ?></td>
-            <td><?php echo $row['Programme_Duration']?></td>
+            <th scope="row"></th>
+            <td>stuff</td>
+            <td>php stuff</td>
           <td><button type="button" class="btn btn-success btn-sm">Edit</button></td>
           <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
         </tr>
-        <?php
-        }
-          ?>
       </tbody>
     </table>
   </div>
