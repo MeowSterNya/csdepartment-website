@@ -4,7 +4,7 @@ if(isset($_SESSION["sessionPass"]))
     {
     if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
         { 
-            sessionExpire();   
+            //sessionExpire();
 ?>
 
 <!DOCTYPE html>

@@ -52,7 +52,7 @@ require("../includes/authenticate.php");
         {
             if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
             {
-                sessionExpire();
+                //sessionExpire();
         ?>
         <form method="post" class="form-inline my-2 my-lg-0">
             <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>
@@ -89,13 +89,19 @@ require("../includes/authenticate.php");
         </tr>
       </thead>
       <tbody>
+        <?php while($row = mysqli_fetch_array($result_set))
+        {
+          ?>
         <tr>
-          <th scope="row">put php stuff here to do fancy row echo</th>
-          <td>put php stuff here to do fancy row echo</td>
-          <td>put php stuff here to do fancy row echo</td>
+          <th scope="row"></th>
+            <td><?php echo $row['Name'] ?></td>
+            <td><?php echo $row['Programme_Duration']?></td>
           <td><button type="button" class="btn btn-success btn-sm">Edit</button></td>
           <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
         </tr>
+        <?php
+        }
+          ?>
       </tbody>
     </table>
   </div>
@@ -106,4 +112,4 @@ require("../includes/authenticate.php");
   <script src="../../js/popper.min.js"></script>
   <script src="../../js/bootstrap.min.js"></script>
 </body>
-</html> 
+</html>

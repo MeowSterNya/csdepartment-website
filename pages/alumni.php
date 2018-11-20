@@ -53,7 +53,7 @@ require("../includes/authenticate.php");
         {
             if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
             {
-                sessionExpire();
+                //sessionExpire();
         ?>
         <form method="post" class="form-inline my-2 my-lg-0">
             <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>
@@ -113,4 +113,4 @@ require("../includes/authenticate.php");
   <script src="../../js/popper.min.js"></script>
   <script src="../../js/bootstrap.min.js"></script>
 </body>
-</html> 
+</html>

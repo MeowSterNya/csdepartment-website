@@ -6,7 +6,7 @@ if(isset($_SESSION["sessionPass"]))
 {             
     if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))       
     {                 
-        sessionExpire();         
+        //sessionExpire();
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +93,7 @@ if(isset($_SESSION["sessionPass"]))
           <input type="text" class="form-control form-control-sm" name="description" placeholder="Enter club description">
         </div>
         <div class="text-center">
-          <button type="submit" name="submit" class="btn btn-block btn-success">Submit</button>
+          <button type="submit" name="club-form" class="btn btn-block btn-success">Add Club</button>
           <a class="btn btn-block btn-danger" href="../../index" role="button">Cancel</a>
         </div>
       </form>
