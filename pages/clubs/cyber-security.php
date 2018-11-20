@@ -1,6 +1,7 @@
 <?php
-require("../../includes/authenticate.php");  
+  require("../../includes/authenticate.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

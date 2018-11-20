@@ -1,5 +1,5 @@
 <?php
-    require("../includes/authenticate.php");  
+  require("../includes/authenticate.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,13 +77,46 @@
 
   <br>
 
-  
+  <div class="card-deck">
+    <div class="card text-center">
+      <img class="card-img-top staff-img mx-auto" src="../media/cslogo.svg" alt="staff picture">
+      <div class="card-body">
+        <h5 class="card-title">insert name using php</h5>
+        <p class="card-text">insert age using php</p>
+      </div>
+      <div class="card-footer">
+        <a class="btn btn-primary" data-toggle="collapse" href="#readmore1" role="button">More...</a>
+        <div class="collapse multi-collapse" id="readmore1">
+          <br>
+          <div class="card card-body">
+            <p>research doc php goes here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card text-center">
+      <img class="card-img-top staff-img mx-auto" src="../media/cslogo.svg" alt="staff picture">
+      <div class="card-body">
+        <h5 class="card-title">insert name using php</h5>
+        <p class="card-text">insert age using php</p>
+      </div>
+      <div class="card-footer">
+        <a class="btn btn-primary" data-toggle="collapse" href="#readmore2" role="button">More...</a>
+        <div class="collapse multi-collapse" id="readmore2">
+          <br>
+          <div class="card card-body">
+            <p>research doc php goes here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
       
   </div>
 
-  <script src="../../js/jquery-3.3.1.min.js"></script>
-  <script src="../../js/popper.min.js"></script>
-  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
 </body>
 </html> 
 

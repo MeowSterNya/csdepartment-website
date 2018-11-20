@@ -27,3 +27,7 @@ html, body {
 i {
   vertical-align: middle;
 }
+
+.staff-img {
+  width:50%;
+}
