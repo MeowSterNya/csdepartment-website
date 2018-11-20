@@ -2,13 +2,13 @@
 
 require("includes/authenticate.php");
 
-
 if(isset($_SESSION["sessionPass"]))
     {
     if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))
         { 
             sessionExpire();   
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +32,7 @@ if(isset($_SESSION["sessionPass"]))
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="">Home</a>
@@ -44,7 +44,7 @@ if(isset($_SESSION["sessionPass"]))
           <a class="nav-link" href="pages/staff">Staff</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="adminForms" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Clubs
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -56,17 +56,17 @@ if(isset($_SESSION["sessionPass"]))
           <a class="nav-link" href="pages/alumni">Alumni</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Admin Forms
           </a>
           <div class="dropdown-menu" aria-labelledby="adminForms">
-            <a class="dropdown-item" href="functions/">Staff</a>
-            <a class="dropdown-item" href="functions/">Undergraduate Research</a>
-            <a class="dropdown-item" href="functions/">Programme/Courses</a>
-            <a class="dropdown-item" href="functions/">Department Activity</a>
-            <a class="dropdown-item" href="functions/">Alumni</a>
-            <a class="dropdown-item" href="functions/">Club</a>
-            <a class="dropdown-item" href="functions/">Staff Research</a>
+            <a class="dropdown-item" href="pages/forms/alumni-form">Add Alumni</a>
+            <a class="dropdown-item" href="pages/forms/club-form">Add Club</a>
+            <a class="dropdown-item" href="pages/forms/courses-form">Add Courses</a>
+            <a class="dropdown-item" href="pages/forms/activity-form">Add Department Activity</a>
+            <a class="dropdown-item" href="pages/forms/programme-form">Add Programme</a>
+            <a class="dropdown-item" href="pages/forms/staff-form">Add Staff & Staff Research</a>
+            <a class="dropdown-item" href="pages/forms/undergraduate-form">Add Undergraduate Research</a>
           </div>
         </li>
       </ul>
@@ -153,15 +153,12 @@ if(isset($_SESSION["sessionPass"]))
 </html> 
         
 <?php }
-
   else {?>
     <script>window.alert("Hmmm Whats up doc?, Try Logging in.");</script> 
     <?php
     include ("includes/login.php");
   }
-
 }
-
   else { 
     
       if(isset($_POST["nav-login"]))
@@ -169,7 +166,8 @@ if(isset($_SESSION["sessionPass"]))
           include ("includes/login.php");  
         } 
         else{
-    ?> 
+    ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,7 +191,7 @@ if(isset($_SESSION["sessionPass"]))
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="">Home</a>
@@ -205,7 +203,7 @@ if(isset($_SESSION["sessionPass"]))
           <a class="nav-link" href="pages/staff">Staff</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Clubs
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -298,19 +296,14 @@ if(isset($_SESSION["sessionPass"]))
   <script src="js/bootstrap.min.js"></script>
   <script>
     $('.carousel').carousel({
-      interval: 3000
-    })
+      interval: 1500,
+      wrap: true
+    });
   </script>
 </body>
 </html> 
  
 <?php
 }
-      
- 
-      
-     
-      
   }
-
 ?>

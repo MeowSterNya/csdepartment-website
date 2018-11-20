@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UoG CS Department Maintenance Login</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>UoG CS Department Maintenance Login</h1>
+        <br/>
+        <h2>Admin Account Management & Login</h2>
+        <form action="login.php" method="post">
+            <b>Operation</b>:
+            <select name="operation">
+                <option value="create">Sign Up</option>
+                <option value="update">Update</option>
+                <option value="delete">Delete</option>
+                <option value="verify" selected="selected">Log In</option>
+            </select><br/></br>
+            ID (NB- For Update or Delete ONLY!):<br/>
+            <input name="id" type="number"/><br/>
+            User Name:<br/>
+            <input name="user_name" type="text"/><br/>
+            Password:<br/>
+            <input name="password" type="password"/><br/>
+            <br/>
+            <input name="submit" type="submit" value="Submit"/><br/>
+        </form>
+    </body>
+</html>
