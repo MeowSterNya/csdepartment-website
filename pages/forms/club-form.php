@@ -1,3 +1,13 @@
+<?php 
+require("../../includes/authenticate.php");
+?>
+<?php         
+if(isset($_SESSION["sessionPass"]))       
+{             
+    if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))       
+    {                 
+        sessionExpire();         
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,14 +63,16 @@
             <a class="dropdown-item" href="courses-form">Add Courses</a>
             <a class="dropdown-item" href="activity-form">Add Department Activity</a>
             <a class="dropdown-item" href="programme-form">Add Programme</a>
-            <a class="dropdown-item" href="staff-form">Add Staff & Staff Research</a>
+            <a class="dropdown-item" href="staff-form">Add Staff &amp; Staff Research</a>
             <a class="dropdown-item" href="undergraduate-form">Add Undergraduate Research</a>
           </div>
         </li>
       </ul>
-      <form method="post" class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>
-      </form>
+               
+        <form method="post" class="form-inline my-2 my-lg-0">            
+            <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>         
+        </form>         
+       
     </div>
   </nav>
 
@@ -88,7 +100,17 @@
     </div>
 
   </div>
-
+    
+    <?php     
+    }         
+}          
+else          
+{         
+    ?>         
+    <form action="../../index.php" method="post" class="form-inline my-2 my-lg-0">             <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login"    type="submit">Login</button>         
+    </form>    
+    <?php } ?>
+    
   <script src="../../js/jquery-3.3.1.min.js"></script>
   <script src="../../js/popper.min.js"></script>
   <script src="../../js/bootstrap.min.js"></script>
