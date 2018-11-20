@@ -79,10 +79,10 @@
         <div class="form-group">
           <label for="programme-year">Programme Duration</label>
           <select class="form-control" name="programme-duration">
-            <option>1 Year</option>
-            <option>2 Years</option>
-            <option>3 Years</option>
-            <option>4 Years</option>
+            <option>1 year</option>
+            <option>2 years</option>
+            <option>3 years</option>
+            <option>4 years</option>
           </select>
         </div>
         <div class="text-center">

@@ -63,10 +63,12 @@
       </form>
     </div>
   </nav>
+  
+  <br>
 
   <div class="container h-100">
     
-    <div class="row h-100 justify-content-center align-items-center">
+    <div class="row h-100 justify-content-center">
       <form action="#" method="post" class="col-5">
         <img class="logo-sm mx-auto" src="../../media/cslogo.svg" alt="Department of Computer Science Logo">
         <br>

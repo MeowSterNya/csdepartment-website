@@ -64,7 +64,8 @@ require("../includes/authenticate.php");
         ?>
        
         <form action="../index.php" method="post" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login"    type="submit">Login</button></form>
+          <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login"    type="submit">Login</button>
+        </form>
   <?php } ?>
     </div>
   </nav>
@@ -77,39 +78,26 @@ require("../includes/authenticate.php");
 
   <br>
 
-  <div class="card-deck">
-    <div class="card text-center" style="width: 18rem;">
-      <img class="card-img-top" src="" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Associates Degree in Computer Science</h5>
-        <p class="card-text">2 year program</p>
-      </div>
-      <div class="card-footer"><a href="#" class="btn btn-primary">View courses</a></div>
-    </div>
-    <div class="card text-center" style="width: 18rem;">
-      <img class="card-img-top" src="" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Associates Degree in Information Systems</h5>
-        <p class="card-text">2 year program</p>
-      </div>
-      <div class="card-footer"><a href="#" class="btn btn-primary">View courses</a></div>
-    </div>
-    <div class="card text-center" style="width: 18rem;">
-      <img class="card-img-top" src="" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Bachelors Degree in Computer Science</h5>
-        <p class="card-text">4 year program</p>
-      </div>
-      <div class="card-footer"><a href="#" class="btn btn-primary">View courses</a></div>
-    </div>
-    <div class="card text-center" style="width: 18rem;">
-      <img class="card-img-top" src="" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Bachelors Degree in Information Systems</h5>
-        <p class="card-text">4 year program</p>
-      </div>
-      <div class="card-footer"><a href="#" class="btn btn-primary">View courses</a></div>
-    </div>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Programme Name</th>
+          <th scope="col">Duration</th>
+          <th scope="col" colspan="2">Functions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">put php stuff here to do fancy row echo</th>
+          <td>put php stuff here to do fancy row echo</td>
+          <td>put php stuff here to do fancy row echo</td>
+          <td><button type="button" class="btn btn-success btn-sm">Edit</button></td>
+          <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
       
   </div>

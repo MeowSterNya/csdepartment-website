@@ -1,6 +1,7 @@
 <?php
 require("../includes/authenticate.php");  
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,6 +78,34 @@ require("../includes/authenticate.php");
   <h1 class="text-center">Alumni</h1>
 
   <br>
+
+  <div class="card-deck">
+    <div class="card text-center">
+      <img class="card-img-top" src="" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">insert name using php</h5>
+        <p class="card-text">insert age using php</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#more">
+          More...
+        </button>
+        <div class="collapse" id="more">
+          <div class="card card-body">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card text-center">
+      <img class="card-img-top" src="" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">insert name using php</h5>
+        <p class="card-text">insert age using php</p>
+      </div>
+      <div class="card-footer"><a href="#" class="btn btn-primary">View more</a></div>
+    </div>
+  </div>
       
   </div>
 
