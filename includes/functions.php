@@ -7,11 +7,11 @@ if(isset($_POST["acti-form"]))
 
     if($result)
     {
-        ?><script>window.alert(Activity Successfully Added);</script><?php
+        ?><script>window.alert("Activity Successfully Added");</script><?php
     }
         else
         {
-            ?><script>window.alert(Activity Failed To Be Added);</script><?php
+            ?><script>window.alert("Activity Failed To Be Added");</script><?php
         }
 }
 
@@ -27,11 +27,11 @@ if(isset($_POST["alumni-form"]))
 
     if($result)
     {
-        ?><script>window.alert(Alumni Successfully Added);</script><?php
+        ?><script>window.alert("Alumni Successfully Added");</script><?php
     }
         else
         {
-            ?><script>window.alert(Alumni Failed To Be Added);</script><?php
+            ?><script>window.alert("Alumni Failed To Be Added");</script><?php
         }
 }
 
@@ -44,11 +44,11 @@ if(isset($_POST["undergrad-form"]))
 
     if($result)
     {
-        ?><script>window.alert(Undergraduate Research Item Successfully Added);</script><?php
+        ?><script>window.alert("Undergraduate Research Item Successfully Added");</script><?php
     }
         else
         {
-            ?><script>window.alert(Undergraduate Research Item Failed To Be Added);</script><?php
+            ?><script>window.alert("Undergraduate Research Item Failed To Be Added");</script><?php
         }
 }
 
@@ -64,11 +64,11 @@ if(isset($_POST["staff-form"]))
 
     if($result)
     {
-        ?><script>window.alert(Staff Successfully Added);</script><?php
+        ?><script>window.alert("Staff Successfully Added");</script><?php
     }
         else
         {
-            ?><script>window.alert(Staff Failed To Be Added);</script><?php
+            ?><script>window.alert("Staff Failed To Be Added");</script><?php
         }
 }
 
@@ -80,11 +80,11 @@ if(isset($_POST["programme-form"]))
 
     if($result)
     {
-        ?><script>window.alert(Programme Successfully Added);</script><?php
+        ?><script>window.alert("Programme Successfully Added");</script><?php
     }
         else
         {
-            ?><script>window.alert(Programme Failed To Be Added);</script><?php
+            ?><script>window.alert("Programme Failed To Be Added");</script><?php
         }
 }
 
@@ -99,11 +99,11 @@ if(isset($_POST["course-form"]))
 
     if($result)
     {
-        ?><script>window.alert(Course Successfully Added);</script><?php
+        ?><script>window.alert("Course Successfully Added");</script><?php
     }
         else
         {
-            ?><script>window.alert(Course Failed To Be Added);</script><?php
+            ?><script>window.alert("Course Failed To Be Added");</script><?php
         }
 }
 
@@ -115,11 +115,11 @@ if(isset($_POST["club-form"]))
 
     if($result)
     {
-        ?><script>window.alert(Club Successfully Added);</script><?php
+        ?><script>window.alert("Club Successfully Added");</script><?php
     }
         else
         {
-            ?><script>window.alert(Club Failed To Be Added);</script><?php
+            ?><script>window.alert("Club Failed To Be Added");</script><?php
         }
 }
 ?>
