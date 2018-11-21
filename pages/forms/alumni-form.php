@@ -79,28 +79,28 @@ if(isset($_SESSION["sessionPass"]))
   <div class="container h-100">
     
     <div class="row h-100 justify-content-center align-items-center">
-      <form action="#" method="post" class="col-5">
+      <form method="post" class="col-5">
         <img class="logo-sm mx-auto" src="../../media/cslogo.svg" alt="Department of Computer Science Logo">
         <h3 class="text-center">Add Alumni</h3>
         <div class="form-group">
           <label for="firstname">First Name</label>
-          <input type="text" class="form-control form-control-sm" name="firstname" placeholder="First Name">
+          <input type="text" class="form-control form-control-sm" name="Firstname" placeholder="First Name">
         </div>
         <div class="form-group">
           <label for="lastname">Last Name</label>
-          <input type="text" class="form-control form-control-sm" name="lastname" placeholder="Last Name">
+          <input type="text" class="form-control form-control-sm" name="Lastname" placeholder="Last Name">
         </div>
         <div class="form-group">
           <label for="dob">Date of Birth</label>
-          <input type="date" class="form-control form-control-sm" name="dob">
+          <input type="date" class="form-control form-control-sm" name="DOB">
         </div>
         <div class="form-group">
           <label for="photo">Add Alumni Photo</label>
-          <input type="file" class="form-control-file" name="photo" accept=".jpg, .jpeg, .png">
+          <input type="file" class="form-control-file" name="Alumni-photo" accept=".jpg, .jpeg, .png">
         </div>
         <div class="form-group">
           <label for="research">Add Research Portfolio document</label>
-          <input type="file" class="form-control-file" name="research" accept=".pdf">
+          <input type="file" class="form-control-file" name="RDP" accept=".pdf">
         </div>
         <div class="text-center">
           <button type="submit" name="alumni-form" class="btn btn-block btn-success">Add Alumni</button>

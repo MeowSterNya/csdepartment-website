@@ -80,22 +80,22 @@ if(isset($_SESSION["sessionPass"]))
   <div class="container h-100">
     
     <div class="row h-100 justify-content-center align-items-center">
-      <form action="#" method="post" class="col-5">
+      <form method="post" class="col-5">
         <img class="logo-sm mx-auto" src="../../media/cslogo.svg" alt="Department of Computer Science Logo">
         <br>
         <h3 class="text-center">Add Undergraduate Research item</h3>
         <br>
         <div class="form-group">
           <label for="researcher">Researcher/Researchers</label>
-          <input type="text" class="form-control form-control-sm" name="researcher" placeholder="Enter names separated by commas">
+          <input type="text" class="form-control form-control-sm" name="Researcher" placeholder="Enter names separated by commas">
         </div>
         <div class="form-group">
           <label for="research-abstract">Research Abstract</label>
-          <textarea class="form-control form-control-sm" name="research-abstract" placeholder="Enter research abstract"></textarea>
+          <textarea class="form-control form-control-sm" name="R_abstract" placeholder="Enter research abstract"></textarea>
         </div>
         <div class="form-group">
           <label for="research">Add Research document</label>
-          <input type="file" class="form-control-file" name="research">
+          <input type="file" class="form-control-file" name="R_DOC">
         </div>
         <div class="text-center">
           <button type="submit" name="undergrad-form" class="btn btn-block btn-success">Add Research Item</button>

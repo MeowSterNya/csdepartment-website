@@ -80,14 +80,14 @@ if(isset($_SESSION["sessionPass"]))
   <div class="container h-100">
     
     <div class="row h-100 justify-content-center align-items-center">
-      <form action="#" method="post" class="col-5">
+      <form method="post" class="col-5">
         <img class="logo-sm mx-auto" src="../../media/cslogo.svg" alt="Department of Computer Science Logo">
         <br>
         <h3 class="text-center">Add Programme</h3>
         <br>
         <div class="form-group">
           <label for="name">Programme Name</label>
-          <input type="text" class="form-control form-control-sm" name="name" placeholder="Enter programme name">
+          <input type="text" class="form-control form-control-sm" name="Programme" placeholder="Enter programme name">
         </div>
         <div class="form-group">
           <label for="programme-year">Programme Duration</label>
