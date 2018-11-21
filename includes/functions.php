@@ -1,9 +1,9 @@
 <?php
 if(isset($_POST["acti-form"]))
 {
-    $addactivity = $_POST['addactivity'];
-    $adddescript = $_POST['adddescript'];
-    $result = query("INSERT INTO `activities` (name,description,category_id) VALUES ('$addactivity','$adddescript','4')");
+    $addActivity = $_POST['activity'];
+    $addDescription = $_POST['description'];
+    $result = query("INSERT INTO `activities` (name,description,category_id) VALUES ('$addActivity','$addDescription','4')");
 
     if($result>0)
     {
