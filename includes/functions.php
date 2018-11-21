@@ -1,9 +1,9 @@
 <?php
-if(isset[$_POST["acti-form"]])
+if(isset($_POST["acti-form"]))
 {
     $addactivity = $_POST['addactivity'];
     $adddescript = $_POST['adddescript'];
-    $result = query("INSERT INTO activity 'activity','description' VALUES '$addactivity','$adddescript'");
+    $result = query("INSERT INTO activities 'name','description','category_id' VALUES '$addactivity','$adddescript','4'");
 
     if($result)
     {
@@ -15,14 +15,15 @@ if(isset[$_POST["acti-form"]])
         }
 }
 
-if(isset[$_POST["alumni-form"]])
+if(isset($_POST["alumni-form"]))
 {
     $addFirstname = $_POST['Firstname'];
     $addLastname = $_POST['Lastname'];
     $addDOB = $_POST['DOB'];
     $addPhoto = $_POST['Alumni-Photo'];
     $addRPD = $_POST['RPD'];
-    $result = query("INSERT INTO alumni 'Firstname','Lastname','DOB','Photo','Research_Document' VALUES '$addFirstname','$addLastname','$addDOB','$addPhoto','$addRPD'");
+    $age = //do calculations;
+    $result = query("INSERT INTO alumni 'firstname','lastname','DOB','age','photo_path','document_path','category_id' VALUES '$addFirstname','$addLastname','$addDOB','$age','$addPhoto','$addRPD','1'");
 
     if($result)
     {
@@ -34,12 +35,12 @@ if(isset[$_POST["alumni-form"]])
         }
 }
 
-if(isset[$_POST["undergrad-form"]])
+if(isset($_POST["undergrad-form"]))
 {
     $addReseacher = $_POST['Researcher'];
     $addRAbstract = $_POST['R_Abstract'];
     $addRDOC = $_POST['R_DOC'];
-    $result = query("INSERT INTO undergraduate_reseach 'Researcher','Research_Abstract','Research_Document' VALUES '$addReseacher','$addRAbstract','$addRDOC'");
+    $result = query("INSERT INTO undergraduate_reseach 'researchers','abstract','document_path','category_id' VALUES '$addReseacher','$addRAbstract','$addRDOC','7'");
 
     if($result)
     {
@@ -51,14 +52,15 @@ if(isset[$_POST["undergrad-form"]])
         }
 }
 
-if(isset[$_POST["staff-form"]])
+if(isset($_POST["staff-form"]))
 {
     $addFirstname = $_POST['Firstname'];
     $addLastname = $_POST['Lastname'];
     $addDOB = $_POST['DOB'];
     $addPhoto = $_POST['Staff-Photo'];
     $addSPD = $_POST['SPD'];
-    $result = query("INSERT INTO staff 'Firstname','Lastname','DOB','Photo','Research_Document' VALUES '$addFirstname','$addLastname','$addDOB','$addPhoto','$addSPD'");
+    $age = //do calculations;
+    $result = query("INSERT INTO staff 'firstname','lastname','DOB','age','photo_path','document_path','category_id' VALUES '$addFirstname','$addLastname','$addDOB','$age','$addPhoto','$addSPD','6'");
 
     if($result)
     {
@@ -70,11 +72,11 @@ if(isset[$_POST["staff-form"]])
         }
 }
 
-if(isset[$_POST["programme-form"]])
+if(isset($_POST["programme-form"]))
 {
     $addProgram = $_POST['Programme'];
     $addDuration = $_POST['programme-duration'];
-    $result = query("INSERT INTO programme 'Name','Programme_Duration' VALUES '$addProgram','$addDuration'");
+    $result = query("INSERT INTO programmes 'name','duration','category_id' VALUES '$addProgram','$addDuration','5'");
 
     if($result)
     {
@@ -86,14 +88,14 @@ if(isset[$_POST["programme-form"]])
         }
 }
 
-if(isset[$_POST["course-form"]])
+if(isset($_POST["course-form"]))
 {
     $addCoursename = $_POST['course-name'];
     $addCoursenum = $_POST['course-code'];
     $adddescript = $_POST['course-description'];
     $addCourseyear = $_POST['course-year'];
-    $addCourseProgram = $_POST['programme']
-    $result = query("INSERT INTO course 'Course_Name','Course_Number','Course_Description','Course_Year','Programme' VALUES '$addCoursename','$addCoursenum,'$adddescript','$addCourseyear','$addCourseProgram");
+    $addCourseProgram = $_POST['programme'];
+    $result = query("INSERT INTO courses 'name','course_code','description','course_year','programme_id', 'category_id' VALUES '$addCoursename','$addCoursenum,'$adddescript','$addCourseyear','$addCourseProgram','3'");
 
     if($result)
     {
@@ -105,11 +107,11 @@ if(isset[$_POST["course-form"]])
         }
 }
 
-if(isset[$_POST["club-form"]])
+if(isset($_POST["club-form"]))
 {
     $addClubname = $_POST['club-name'];
     $addClubdesc = $_POST['club-description'];
-    $result = query("INSERT INTO club 'Club_Name','Club_Description' VALUES '$addClubname''$addClubdesc'");
+    $result = query("INSERT INTO clubs 'name','description','category_id' VALUES '$addClubname','$addClubdesc','2'");
 
     if($result)
     {

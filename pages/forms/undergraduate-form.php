@@ -87,7 +87,7 @@ if(isset($_SESSION["sessionPass"]))
         <br>
         <div class="form-group">
           <label for="researcher">Researcher/Researchers</label>
-          <input type="text" class="form-control form-control-sm" name="researcher" placeholder="Enter Names separated by commas">
+          <input type="text" class="form-control form-control-sm" name="researcher" placeholder="Enter names separated by commas">
         </div>
         <div class="form-group">
           <label for="research-abstract">Research Abstract</label>
