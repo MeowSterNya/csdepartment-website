@@ -1,7 +1,7 @@
 <?php
   
   require_once("session.php");
-  require_once("functions.php");
+  require("functions.php");
   session_start(); 
   login();
   logout();
