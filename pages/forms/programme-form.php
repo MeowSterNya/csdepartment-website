@@ -68,12 +68,9 @@ if(isset($_SESSION["sessionPass"]))
           </div>
         </li>
       </ul>
-                 
-        <form method="post" class="form-inline my-2 my-lg-0">       
-            <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>         
-        </form>         
-        
-       
+      <form method="post" class="form-inline my-2 my-lg-0">       
+        <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>         
+      </form>         
     </div>
   </nav>
 
@@ -87,15 +84,15 @@ if(isset($_SESSION["sessionPass"]))
         <br>
         <div class="form-group">
           <label for="name">Programme Name</label>
-          <input type="text" class="form-control form-control-sm" name="Programme" placeholder="Enter programme name">
+          <input type="text" class="form-control form-control-sm" name="name" placeholder="Enter programme name">
         </div>
         <div class="form-group">
           <label for="programme-year">Programme Duration</label>
           <select class="form-control" name="programme-duration">
-            <option>1 year</option>
-            <option>2 years</option>
-            <option>3 years</option>
-            <option>4 years</option>
+            <option value="1">1 year</option>
+            <option value="2">2 years</option>
+            <option value="3">3 years</option>
+            <option value="4">4 years</option>
           </select>
         </div>
         <div class="text-center">

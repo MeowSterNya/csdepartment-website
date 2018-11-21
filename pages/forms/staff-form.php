@@ -101,7 +101,7 @@ if(isset($_SESSION["sessionPass"]))
         </div>
         <div class="form-group">
           <label for="research">Add Research document</label>
-          <input type="file" class="form-control-file" name="SPD" accept=".pdf">>
+          <input type="file" class="form-control-file" name="SPD" accept=".pdf">
         </div>
         <div class="text-center">
           <button type="submit" name="staff-form" class="btn btn-block btn-success">Add Staff</button>
@@ -118,7 +118,8 @@ if(isset($_SESSION["sessionPass"]))
 else         
 {         
     ?>         
-    <form action="../../index.php" method="post" class="form-inline my-2 my-lg-0">             <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login"    type="submit">Login</button>         
+    <form action="../../index.php" method="post" class="form-inline my-2 my-lg-0">             
+      <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login" type="submit">Login</button>         
     </form>    
     <?php } ?>
     

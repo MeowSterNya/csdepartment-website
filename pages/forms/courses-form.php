@@ -1,5 +1,5 @@
 <?php 
-require("../../includes/authenticate.php");   
+require("../../includes/authenticate.php");
 ?>
 <?php         
 if(isset($_SESSION["sessionPass"]))         
@@ -68,12 +68,9 @@ if(isset($_SESSION["sessionPass"]))
           </div>
         </li>
       </ul>
-               
-        <form method="post" class="form-inline my-2 my-lg-0">           
-            <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>         
-        </form>         
-        
-        
+      <form method="post" class="form-inline my-2 my-lg-0">           
+        <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>         
+      </form>         
     </div>
   </nav>
   
@@ -102,17 +99,16 @@ if(isset($_SESSION["sessionPass"]))
         <div class="form-group">
           <label for="course-year">Select Course Year</label>
           <select class="form-control" name="course-year">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+            <option value="First year">First year</option>
+            <option value="Second year">Second year</option>
+            <option value="Third year">Third year</option>
+            <option value="Fourth year">Fourth year</option>
           </select>
         </div>
         <div class="form-group">
           <label for="programme">Select Programme</label> <!-- POPULATE USING PHP -->
           <select class="form-control" name="programme">
-            <option>Associates Degree in Computer Science</option>
-            <option>Bachelors Degree in Computer Science</option>
+            <option value="<?php  ?>"></option>
           </select>
         </div>
         <div class="text-center">

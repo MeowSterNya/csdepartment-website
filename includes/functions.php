@@ -72,21 +72,21 @@ if(isset($_POST["staff-form"]))
 
 if(isset($_POST["programme-form"]))
 {
-    $addProgram = $_POST['Programme'];
-    $addDuration = $_POST['programme-duration'];
-    $result = query("INSERT INTO `programmes` (name,duration,category_id) VALUES ('$addProgram','$addDuration'),'5'");
+    $name = $_POST['name'];
+    $duration = $_POST['programme-duration'];
+    $result = query("INSERT INTO `programmes` (name,duration,category_id) VALUES ('$name','$duration','5')");
 
     if($result>0)
     {
-        ?><script>window.alert("Programme Successfully Added");</script><?php
+      ?><script>window.alert("Programme Successfully Added");</script><?php
     }
-        else
-        {
-            ?><script>window.alert("Programme Failed To Be Added");</script><?php
-        }
+    else
+    {
+      ?><script>window.alert("Programme Failed To Be Added");</script><?php
+    }
 }
 
-if(isset($_POST["course-form"]))
+if(isset($_POST["courses-form"]))
 {
     $addCoursename = $_POST['course-name'];
     $addCoursenum = $_POST['course-code'];
