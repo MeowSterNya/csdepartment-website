@@ -1,10 +1,10 @@
 <?php
-  
   require_once("session.php");
   require("functions.php");
   session_start(); 
   login();
   logout();
+  
   function login() 
   {
     if(isset($_POST["login"])) {
@@ -21,7 +21,7 @@
       }
       else {
         echo "<p>Error: Your username or password is incorrect. Please re-enter your credentials.</p>";
-        echo "<p><a href='login'>Try Again</a></p>";
+        echo "<p><a href='../'>Try Again</a></p>";
       }
     }
   }
@@ -35,12 +35,12 @@
     return $success;
   }
     
-    function logout()
+  function logout()
+  {
+    if(isset($_POST["logout"]))
     {
-        if(isset($_POST["logout"]))
-        {
-            killSession();
-            //header("Location:index");
-        }
+      killSession();
+      //header("Location:index");
     }
+  }
 ?>

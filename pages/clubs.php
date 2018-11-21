@@ -10,7 +10,7 @@ require("../includes/authenticate.php");
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/css.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../favicon.png">
-  <title>Programmes Offered</title>
+  <title>Clubs</title>
 </head>
 <body>
 
@@ -28,14 +28,14 @@ require("../includes/authenticate.php");
         <li class="nav-item">
           <a class="nav-link" href="../">Home</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="programmes">Programmes Offered</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="staff">Staff</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="clubs">Clubs</a>
+          <a class="nav-link active" href="clubs">Clubs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="alumni">Alumni</a>
@@ -68,17 +68,18 @@ require("../includes/authenticate.php");
 
   <br>
 
-  <h1 class="text-center">Programmes Offered</h1>
+  <h1 class="text-center">Clubs</h1>
 
   <br>
 
+  <!-- Table -->
   <div class="table-responsive">
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Programme Name</th>
-          <th scope="col">Duration</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
           <th scope="col" colspan="2">Functions</th>
         </tr>
       </thead>
@@ -99,7 +100,7 @@ require("../includes/authenticate.php");
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit Programme</h5>
+          <h5 class="modal-title">Edit Club</h5>
           <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -107,23 +108,18 @@ require("../includes/authenticate.php");
         <div class="modal-body">
           <form method="post">
             <div class="form-group">
-              <label for="name">Programme Name</label>
-              <input type="text" class="form-control form-control-sm" name="name" value="<?php ?>">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" name="club-name" value="<?php ?>">
             </div>
             <div class="form-group">
-              <label for="programme-year">Programme Duration</label>
-              <select class="form-control" name="programme-duration">
-                <option value="1">1 year</option>
-                <option value="2">2 years</option>
-                <option value="3">3 years</option>
-                <option value="4">4 years</option>
-              </select>
+              <label for="description">Description</label>
+                <input type="text" class="form-control" name="club-description" value="<?php ?>">
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" name="programme-update">Save Changes</button>
+          <button type="button" class="btn btn-success" name="club-update">Save Changes</button>
         </div>
       </div>
     </div>
