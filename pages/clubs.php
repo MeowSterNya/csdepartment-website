@@ -89,7 +89,7 @@ require("../includes/authenticate.php");
           <td>stuff</td>
           <td>php stuff</td>
           <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
-          <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+          <td><a class="btn btn-danger btn-sm" name="delete" href="">Delete</a></td>
         </tr>
       </tbody>
     </table>

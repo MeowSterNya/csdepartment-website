@@ -83,7 +83,7 @@ require("../includes/authenticate.php");
       <div class="card-footer">
         <a class="btn btn-primary" data-toggle="collapse" href="#readmore1" role="button">More...</a>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit-modal">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <a class="btn btn-danger" name="delete" href="">Delete</a>
         <div class="collapse multi-collapse" id="readmore1">
           <br>
           <div class="card card-body">
@@ -101,7 +101,7 @@ require("../includes/authenticate.php");
       <div class="card-footer">
         <a class="btn btn-primary" data-toggle="collapse" href="#readmore2" role="button">More...</a>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit-modal">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <a class="btn btn-danger" name="delete" href="">Delete</a>
         <div class="collapse multi-collapse" id="readmore2">
           <br>
           <div class="card card-body">
