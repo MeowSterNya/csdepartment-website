@@ -62,10 +62,9 @@ if(isset($_SESSION["sessionPass"]))
           </div>
         </li>
       </ul>
-        
-        <form method="post" class="form-inline my-2 my-lg-0">            
-            <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>         
-        </form>         
+      <form method="post" class="form-inline my-2 my-lg-0">            
+        <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>         
+      </form>         
     </div>
   </nav>
 
