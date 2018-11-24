@@ -30,7 +30,7 @@ if(isset($_SESSION["sessionPass"]))
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="../../index">Home</a>
@@ -121,7 +121,7 @@ else
 {         
     ?>         
     <form action="../../index.php" method="post" class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login" type="submit">Login</button>         
+      <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login" type="submit">Login</button>
     </form>    
     <?php } ?>
     

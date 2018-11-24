@@ -4,7 +4,7 @@
   session_start(); 
   login();
   logout();
-  
+
   function login() 
   {
     if(isset($_POST["login"])) {

@@ -23,9 +23,9 @@
       {
         killSession();
         ?>
-          <script>window.alert("You have been logged out due to inactivity, Please log in if you wish to continue your activities.");</script> 
-        <?php   
-      } 
-    }  
+          <script>window.alert("You have been logged out due to inactivity, Please log in if you wish to continue your activities.");</script>
+        <?php
+      }
+    }
   }
 ?>

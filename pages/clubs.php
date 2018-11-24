@@ -1,5 +1,5 @@
 <?php
-require("../includes/authenticate.php");  
+require("../includes/authenticate.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,11 +52,11 @@ require("../includes/authenticate.php");
           <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>
         </form>
       <?php }
-        } 
+        }
         else
         {
         ?>
-       
+
         <form action="../index.php" method="post" class="form-inline my-2 my-lg-0">
           <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login" type="submit">Login</button>
         </form>
@@ -124,7 +124,7 @@ require("../includes/authenticate.php");
       </div>
     </div>
   </div>
-      
+
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>
