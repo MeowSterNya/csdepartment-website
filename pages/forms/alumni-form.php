@@ -32,7 +32,7 @@ if(isset($_SESSION["sessionPass"]))
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="../../index">Home</a>
         </li>
         <li class="nav-item">
@@ -41,19 +41,13 @@ if(isset($_SESSION["sessionPass"]))
         <li class="nav-item">
           <a class="nav-link" href="../../pages/staff">Staff</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Clubs
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../pages/clubs/cyber-security">Cyber Security</a>
-            <a class="dropdown-item" href="../pages/clubs/foss">Free and Open Source Software</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/clubs">Clubs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../../pages/alumni">Alumni</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item active dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Admin Forms
           </a>
@@ -84,11 +78,11 @@ if(isset($_SESSION["sessionPass"]))
         <h3 class="text-center">Add Alumni</h3>
         <div class="form-group">
           <label for="firstname">First Name</label>
-          <input type="text" class="form-control form-control-sm" name="Firstname" placeholder="First Name">
+          <input type="text" class="form-control form-control-sm" name="firstname" placeholder="Enter first name">
         </div>
         <div class="form-group">
           <label for="lastname">Last Name</label>
-          <input type="text" class="form-control form-control-sm" name="Lastname" placeholder="Last Name">
+          <input type="text" class="form-control form-control-sm" name="lastname" placeholder="Enter last name">
         </div>
         <div class="form-group">
           <label for="dob">Date of Birth</label>
@@ -96,11 +90,11 @@ if(isset($_SESSION["sessionPass"]))
         </div>
         <div class="form-group">
           <label for="photo">Add Alumni Photo</label>
-          <input type="file" class="form-control-file" name="Alumni-photo" accept=".jpg, .jpeg, .png">
+          <input type="file" class="form-control-file" name="photo" accept=".jpg, .jpeg, .png">
         </div>
         <div class="form-group">
           <label for="research">Add Research Portfolio document</label>
-          <input type="file" class="form-control-file" name="RDP" accept=".pdf">
+          <input type="file" class="form-control-file" name="research" accept=".pdf">
         </div>
         <div class="text-center">
           <button type="submit" name="alumni-form" class="btn btn-block btn-success">Add Alumni</button>
@@ -117,7 +111,8 @@ if(isset($_SESSION["sessionPass"]))
 else          
 {         
     ?>         
-    <form action="../../index.php" method="post" class="form-inline my-2 my-lg-0">             <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login"    type="submit">Login</button>         
+    <form action="../../index.php" method="post" class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login" type="submit">Login</button>
     </form>    
     <?php } ?>
     

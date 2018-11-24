@@ -42,14 +42,8 @@ if(isset($_SESSION["sessionPass"]))
         <li class="nav-item">
           <a class="nav-link" href="pages/staff">Staff</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Clubs
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="pages/clubs/cyber-security">Cyber Security</a>
-            <a class="dropdown-item" href="pages/clubs/foss">Free and Open Source Software</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/clubs">Clubs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="pages/alumni">Alumni</a>
@@ -202,14 +196,8 @@ else
         <li class="nav-item">
           <a class="nav-link" href="pages/staff">Staff</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Clubs
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="pages/clubs/cyber-security">Cyber Security</a>
-            <a class="dropdown-item" href="pages/clubs/foss">Free and Open Source Software</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/clubs">Clubs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="pages/alumni">Alumni</a>
