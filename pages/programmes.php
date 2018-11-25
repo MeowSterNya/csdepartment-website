@@ -1,6 +1,6 @@
 <?php
 require("../includes/authenticate.php");
-require("../my_api/pages/programme_read.php");
+require("../api/pages/programme_read.php");
 header( "Access-Control-Allow-Origin: *" );
 header( "Content-Type: text/html; charset=UTF-8" );
 header( "Access-Control-Allow-Methods: GET" );
