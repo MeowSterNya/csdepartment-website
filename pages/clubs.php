@@ -1,14 +1,10 @@
 <?php
 require("../includes/authenticate.php");
-require("../my_api/pages/read.php");
-require("../my_api/tools/string_utility.php");
-header( "Access-Control-Allow-Origin: *" );
+require("../api/pages/read.php");
+require("../api/tools/string_utility.php");
 header( "Content-Type: text/html; charset=UTF-8" );
-header( "Access-Control-Allow-Methods: GET" );
-header( "Access-Control-Max-Age: 3600" );
-header( "Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With" );
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
