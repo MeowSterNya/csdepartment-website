@@ -90,10 +90,10 @@ if(isset($_POST["courses-form"]))
 {
   $addCoursename = filter_var($_POST['course-name'], FILTER_SANITIZE_STRING);
   $addCoursenum = filter_var($_POST['course-code'], FILTER_SANITIZE_STRING);
-  $adddescript = filter_var($_POST['course-description'], FILTER_SANITIZE_STRING);
+  $addDescription = filter_var($_POST['course-description'], FILTER_SANITIZE_STRING);
   $addCourseyear = $_POST['course-year'];
   $addCourseProgram = $_POST['programme'];
-  $result = query("INSERT INTO `courses` (name,course_code,description,course_year,programme_id,category_id) VALUES ('$addCoursename','$addCoursenum,'$adddescript','$addCourseyear','$addCourseProgram','3')");
+    $result = query("INSERT INTO `courses` (name,course_code,description,course_year,programme_id,category_id) VALUES ( '$addCoursename', '$addCoursenum', '$addDescription', '$addCourseyear', '$addCourseProgram', '3')");
 
   if($result>0)
   {

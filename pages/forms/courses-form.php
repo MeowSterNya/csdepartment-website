@@ -99,7 +99,7 @@ if(isset($_SESSION["sessionPass"]))
         </div>
         <div class="form-group">
           <label for="course-description">Description</label>
-          <textarea class="form-control form-control-sm" name="course-description" placeholder="Enter short course description"></textarea>
+          <input type="text" class="form-control form-control-sm" name="course-description" placeholder="Enter short course description">
         </div>
         <div class="form-group">
           <label for="course-year">Select Course Year</label>
@@ -112,6 +112,7 @@ if(isset($_SESSION["sessionPass"]))
         </div>
         <div class="form-group">
           <label for="programme">Select Programme</label>
+
           <select class="form-control" name="programme">
           <?php
             $programme_arr_php = json_decode($programme_arr_json);
@@ -122,12 +123,13 @@ if(isset($_SESSION["sessionPass"]))
             foreach ($allRecords as $record)
             {
           ?>
-            <option value="<?php echo $record->name; ?>"><?php echo $record->name; ?></option>
+            <option value="<?php echo $record->ID; ?>"><?php echo $record->name; ?></option>
+              <?php
+            }
+              ?>
           </select>
         </div>
-          <?php
-            }
-          ?>
+
         <div class="text-center">
           <button type="submit" name="courses-form" class="btn btn-block btn-success">Add Course</button>
           <a class="btn btn-block btn-danger" href="../../index" role="button">Cancel</a>

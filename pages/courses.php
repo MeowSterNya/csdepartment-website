@@ -110,10 +110,10 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <tr>
               <th scope="row"><?php echo $record->ID; ?></th>
               <td><?php echo $record->name; ?></td>
-              <td><?php echo $record->code; ?></td>
+              <td><?php echo $record->course_code; ?></td>
               <td><?php echo $record->description; ?></td>
-              <td><?php echo $record->year; ?></td>
-              <td><?php echo $record->programme; ?></td>
+              <td><?php echo $record->course_year; ?></td>
+              <td><?php echo $record->programme_name; ?></td>
               <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
               <td><a class="btn btn-danger btn-sm" name="delete-course" href="../includes/delete.php?del=<?php echo $record->ID; ?>">Delete</a></td>
           </tr>

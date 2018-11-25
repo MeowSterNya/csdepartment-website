@@ -52,7 +52,6 @@
 
         // show courses data in json format
         $course_arr_json = json_encode($courses_arr);
-
     }
 
     else{
