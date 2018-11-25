@@ -1,13 +1,11 @@
 <?php
 require("../includes/authenticate.php");
-require("../my_api/pages/club_read.php");
+require("../api/pages/club_read.php");
 header( "Access-Control-Allow-Origin: *" );
+require("../api/pages/club_read.php");
 header( "Content-Type: text/html; charset=UTF-8" );
-header( "Access-Control-Allow-Methods: GET" );
-header( "Access-Control-Max-Age: 3600" );
-header( "Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With" );
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
