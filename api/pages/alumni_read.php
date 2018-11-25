@@ -4,8 +4,8 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 // database connection will be here
 // include database and object files
-include_once '../my_api/config/database.php';
-include_once '../my_api/objects/alumni_obj.php';
+include_once '../api/config/database.php';
+include_once '../api/objects/alumni_obj.php';
 
 // instantiate database and alumni object
 $database = new Database();
