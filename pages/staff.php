@@ -102,7 +102,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
               <div class="card-footer">
                   <a class="btn btn-primary" data-toggle="collapse" href="#readmore1" role="button">More...</a>
                   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit-modal">Edit</button>
-                  <a class="btn btn-danger" name="delete-staff" href="../includes/delete.php?del=<?php echo $record->ID; ?>">Delete</a>
+                  <td><form><button type="submit" class="btn btn-danger btn-sm" name="delete-staff" value="<?php echo $record->ID;?>">Delete</button></form></td>
                   <div class="collapse multi-collapse" id="readmore1">
                       <br>
                       <div class="card card-body">

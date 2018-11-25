@@ -109,7 +109,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
             <td><?php echo $record->name; ?></td>
             <td><?php echo $record->description; ?></td>
           <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
-          <td><a class="btn btn-danger btn-sm" name="delete-activity" href="../includes/delete.php?del=<?php echo $record->ID; ?>">Delete</a></td>
+            <td><form><button type="submit" class="btn btn-danger btn-sm" name="delete-activity" value="<?php echo $record->ID;?>">Delete</button></form></td>
         </tr>
 
         <?php

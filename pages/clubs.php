@@ -109,7 +109,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
             <td><?php echo $record->name; ?></td>
             <td><?php echo $record->description; ?></td>
 
-          <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
+            <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal" value="<?php $ID = $record->ID; echo $record->ID;?>">Edit</button></td>
             <td><form><button type="submit" class="btn btn-danger btn-sm" name="delete-club" value="<?php echo $record->ID;?>">Delete</button></form></td>
         </tr>
 
@@ -135,6 +135,10 @@ header( "Content-Type: text/html; charset=UTF-8" );
         </div>
         <div class="modal-body">
           <form method="post">
+              <div class="form-group">
+                  <label for="name">ID -<?php echo $ID;?></label>
+                  <input type="hidden" class="form-control" name="club-id" value="<?php echo $record->ID; ?>">
+              </div>
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" class="form-control" name="club-name" value="<?php ?>">
@@ -143,12 +147,13 @@ header( "Content-Type: text/html; charset=UTF-8" );
               <label for="description">Description</label>
                 <input type="text" class="form-control" name="club-description" value="<?php ?>">
             </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-success" name="club-update">Save Changes</button>
+              </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" name="club-update">Save Changes</button>
-        </div>
+
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@
   require_once("session.php");
   require_once("create.php");
   require_once("delete.php");
+  require_once("update.php");
   session_start(); 
   login();
   logout();

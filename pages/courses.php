@@ -115,7 +115,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
               <td><?php echo $record->course_year; ?></td>
               <td><?php echo $record->programme_name; ?></td>
               <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
-              <td><a class="btn btn-danger btn-sm" name="delete-course" href="../includes/delete.php?del=<?php echo $record->ID; ?>">Delete</a></td>
+              <td><form><button type="submit" class="btn btn-danger btn-sm" name="delete-courses" value="<?php echo $record->ID;?>">Delete</button></form></td>
           </tr>
 
           <?php
