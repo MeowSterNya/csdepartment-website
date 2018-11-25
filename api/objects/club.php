@@ -19,7 +19,7 @@ class Clubs{
 
     // read clubs
     function read() {
-        $query = "SELECT cb.id, cb.name, cb.description, cb.category_id FROM " . $this->table_name . " cb";
+        $query = "SELECT id, name, description FROM " . $this->table_name . " ";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);
