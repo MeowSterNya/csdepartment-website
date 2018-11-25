@@ -1,13 +1,18 @@
 <?php 
 require("../../includes/authenticate.php");
+require("../../api/functions/programme_read.php");
+header( "Access-Control-Allow-Origin: *" );
+header( "Content-Type: text/html; charset=UTF-8" );
 ?>
+
 <?php         
 if(isset($_SESSION["sessionPass"]))         
 {             
     if(($_SESSION["sessionPass"]) == ($_SESSION["sessionUsPas"]))  
     {                 
         //sessionExpire();
-?>  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +52,12 @@ if(isset($_SESSION["sessionPass"]))
         <li class="nav-item">
           <a class="nav-link" href="../../pages/alumni">Alumni</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/activity">Department Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/courses">Courses</a>
+        </li>
         <li class="nav-item active dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Admin Forms
@@ -80,7 +91,7 @@ if(isset($_SESSION["sessionPass"]))
         <br>
         <div class="form-group">
           <label for="name">Course Name</label>
-          <input type="text" class="form-control form-control-sm" name="name" placeholder="Enter course name">
+          <input type="text" class="form-control form-control-sm" name="course-name" placeholder="Enter course name">
         </div>
         <div class="form-group">
           <label for="course-code">Course Code</label>
@@ -100,11 +111,23 @@ if(isset($_SESSION["sessionPass"]))
           </select>
         </div>
         <div class="form-group">
-          <label for="programme">Select Programme</label> <!-- POPULATE USING PHP -->
+          <label for="programme">Select Programme</label>
           <select class="form-control" name="programme">
-            <option value="<?php  ?>"></option>
+          <?php
+            $programme_arr_php = json_decode($programme_arr_json);
+            if ($programme_arr_php != null )
+            {
+                $allRecords = $programme_arr_php->records;
+            }
+            foreach ($allRecords as $record)
+            {
+          ?>
+            <option value="<?php echo $record->name; ?>"><?php echo $record->name; ?></option>
           </select>
         </div>
+          <?php
+            }
+          ?>
         <div class="text-center">
           <button type="submit" name="courses-form" class="btn btn-block btn-success">Add Course</button>
           <a class="btn btn-block btn-danger" href="../../index" role="button">Cancel</a>

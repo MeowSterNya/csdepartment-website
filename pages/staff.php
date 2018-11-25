@@ -1,12 +1,10 @@
 <?php
-  require("../includes/authenticate.php");
-require("../api/pages/staff_read.php");
+require("../includes/authenticate.php");
+require("../api/functions/staff_read.php");
 header( "Access-Control-Allow-Origin: *" );
 header( "Content-Type: text/html; charset=UTF-8" );
-header( "Access-Control-Allow-Methods: GET" );
-header( "Access-Control-Max-Age: 3600" );
-header( "Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With" );
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +43,12 @@ header( "Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Header
         </li>
         <li class="nav-item">
           <a class="nav-link" href="alumni">Alumni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="activity">Department Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="courses">Courses</a>
         </li>
       </ul>
     
@@ -98,7 +102,7 @@ header( "Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Header
               <div class="card-footer">
                   <a class="btn btn-primary" data-toggle="collapse" href="#readmore1" role="button">More...</a>
                   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit-modal">Edit</button>
-                  <a class="btn btn-danger" name="delete" href="">Delete</a>
+                  <a class="btn btn-danger" name="delete-staff" href="../includes/delete.php?del=<?php echo $record->ID; ?>">Delete</a>
                   <div class="collapse multi-collapse" id="readmore1">
                       <br>
                       <div class="card card-body">

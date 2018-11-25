@@ -1,15 +1,18 @@
 <?php
-class Clubs{
+class Courses{
 
     // database connection and table name
     private $conn;
-    private $table_name = "clubs";
+    private $table_name = "courses";
 
     // object properties
     public $id;
     public $name;
+    public $course_code;
     public $description;
-    public $category_id;
+    public $course_year;
+    public $programme_id;
+    public $programme_name;
 
 
     // constructor with $db as database connection
@@ -17,11 +20,11 @@ class Clubs{
         $this->conn = $db;
     }
 
-    // read clubs
+    // read courses
     function read(){
 
         // select all query
-        $query = "SELECT cb.id, cb.name, cb.description, cb.category_id FROM " . $this->table_name . " cb ";
+        $query = "SELECT pg.name, c.id, c.name, c.duration, FROM " . $this->table_name . " c LEFT JOIN programmes pg ON pg.ID = c.programme_id";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);

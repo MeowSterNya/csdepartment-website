@@ -14,13 +14,6 @@ class Alumnis{
     public $document;
     public $category_id;
 
-
-
-
-
-
-
-
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;
@@ -30,13 +23,7 @@ class Alumnis{
     function read(){
 
         // select all query
-        $query = "SELECT
-                c.name as category_name, al.ID, al.firstname, al.lastname, al.DOB, al.photo_path, al.document_path, al.category_id
-            FROM
-                " . $this->table_name . " al
-                LEFT JOIN
-                    categories c
-                        ON al.category_id = c.ID";
+        $query = "SELECT al.ID, al.firstname, al.lastname, al.DOB, al.photo_path, al.document_path FROM " . $this->table_name . " al ";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);

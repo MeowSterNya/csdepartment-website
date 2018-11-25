@@ -1,6 +1,6 @@
 <?php
 require("../includes/authenticate.php");
-require("../api/functions/programme_read.php");
+require("../api/functions/courses_read.php");
 header( "Access-Control-Allow-Origin: *" );
 header( "Content-Type: text/html; charset=UTF-8" );
 ?>
@@ -14,7 +14,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/css.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../favicon.png">
-  <title>Programmes Offered</title>
+  <title>Courses Offered</title>
 </head>
 <body>
 
@@ -32,7 +32,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
         <li class="nav-item">
           <a class="nav-link" href="../">Home</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="programmes">Programmes Offered</a>
         </li>
         <li class="nav-item">
@@ -47,7 +47,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
         <li class="nav-item">
           <a class="nav-link" href="activity">Department Activities</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="courses">Courses</a>
         </li>
       </ul>
@@ -78,7 +78,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
   <br>
 
-  <h1 class="text-center">Programmes Offered</h1>
+  <h1 class="text-center">Courses Offered</h1>
 
   <br>
 
@@ -87,18 +87,21 @@ header( "Content-Type: text/html; charset=UTF-8" );
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Programme Name</th>
-          <th scope="col">Duration (in years)</th>
+          <th scope="col">Course Name</th>
+          <th scope="col">Course Code</th>
+          <th scope="col">Description</th>
+          <th scope="col">Course Year</th>
+          <th scope="col">Course Programme</th>
           <th scope="col" colspan="2">Functions</th>
         </tr>
       </thead>
       <tbody>
 
           <?php
-          $programme_arr_php = json_decode($programme_arr_json);
-          if ($programme_arr_php != null )
+          $course_arr_php = json_decode($course_arr_json);
+          if ($course_arr_php != null )
           {
-              $allRecords = $programme_arr_php->records;
+              $allRecords = $course_arr_php->records;
           }
 
           foreach ($allRecords as $record)
@@ -107,9 +110,12 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <tr>
               <th scope="row"><?php echo $record->ID; ?></th>
               <td><?php echo $record->name; ?></td>
-              <td><?php echo $record->duration; ?></td>
+              <td><?php echo $record->code; ?></td>
+              <td><?php echo $record->description; ?></td>
+              <td><?php echo $record->year; ?></td>
+              <td><?php echo $record->programme; ?></td>
               <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
-              <td><a class="btn btn-danger btn-sm" name="delete-programme" href="../includes/delete.php?del=<?php echo $record->ID; ?>">Delete</a></td>
+              <td><a class="btn btn-danger btn-sm" name="delete-course" href="../includes/delete.php?del=<?php echo $record->ID; ?>">Delete</a></td>
           </tr>
 
           <?php

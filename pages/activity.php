@@ -1,6 +1,6 @@
 <?php
 require("../includes/authenticate.php");
-require("../api/functions/programme_read.php");
+require("../api/functions/activity_read.php");
 header( "Access-Control-Allow-Origin: *" );
 header( "Content-Type: text/html; charset=UTF-8" );
 ?>
@@ -14,7 +14,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/css.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../favicon.png">
-  <title>Programmes Offered</title>
+  <title>Department Activities</title>
 </head>
 <body>
 
@@ -32,7 +32,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
         <li class="nav-item">
           <a class="nav-link" href="../">Home</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="programmes">Programmes Offered</a>
         </li>
         <li class="nav-item">
@@ -45,7 +45,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <a class="nav-link" href="alumni">Alumni</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="activity">Department Activities</a>
+          <a class="nav-link active" href="activity">Department Activities</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="courses">Courses</a>
@@ -62,11 +62,11 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>
         </form>
       <?php }
-        } 
+        }
         else
         {
         ?>
-       
+
         <form action="../index.php" method="post" class="form-inline my-2 my-lg-0">
           <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login" type="submit">Login</button>
         </form>
@@ -78,43 +78,43 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
   <br>
 
-  <h1 class="text-center">Programmes Offered</h1>
+  <h1 class="text-center">Department Activities</h1>
 
   <br>
 
+  <!-- Table -->
   <div class="table-responsive">
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Programme Name</th>
-          <th scope="col">Duration (in years)</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
           <th scope="col" colspan="2">Functions</th>
         </tr>
       </thead>
       <tbody>
+       <?php
+          $activities_arr_php = json_decode($activities_arr_json);
+          if ($activities_arr_php != null )
+              {
+                  $allRecords = $activities_arr_php->records;
+              }
 
-          <?php
-          $programme_arr_php = json_decode($programme_arr_json);
-          if ($programme_arr_php != null )
-          {
-              $allRecords = $programme_arr_php->records;
-          }
-
-          foreach ($allRecords as $record)
-          {
+            foreach ($allRecords as $record)
+            {
           ?>
-          <tr>
-              <th scope="row"><?php echo $record->ID; ?></th>
-              <td><?php echo $record->name; ?></td>
-              <td><?php echo $record->duration; ?></td>
-              <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
-              <td><a class="btn btn-danger btn-sm" name="delete-programme" href="../includes/delete.php?del=<?php echo $record->ID; ?>">Delete</a></td>
-          </tr>
+        <tr>
+          <th scope="row"><?php echo $record->ID; ?></th>
+            <td><?php echo $record->name; ?></td>
+            <td><?php echo $record->description; ?></td>
+          <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
+          <td><a class="btn btn-danger btn-sm" name="delete-activity" href="../includes/delete.php?del=<?php echo $record->ID; ?>">Delete</a></td>
+        </tr>
 
-          <?php
-          }
-          ?>
+        <?php
+            }
+        ?>
 
       </tbody>
     </table>
@@ -125,7 +125,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit Programme</h5>
+          <h5 class="modal-title">Edit Activity</h5>
           <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -133,28 +133,23 @@ header( "Content-Type: text/html; charset=UTF-8" );
         <div class="modal-body">
           <form method="post">
             <div class="form-group">
-              <label for="name">Programme Name</label>
-              <input type="text" class="form-control form-control-sm" name="name" value="<?php ?>">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" name="name" value="<?php ?>">
             </div>
             <div class="form-group">
-              <label for="programme-year">Programme Duration</label>
-              <select class="form-control" name="programme-duration">
-                <option value="1">1 year</option>
-                <option value="2">2 years</option>
-                <option value="3">3 years</option>
-                <option value="4">4 years</option>
-              </select>
+              <label for="description">Description</label>
+              <input type="text" class="form-control" name="description" value="<?php ?>">
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" name="programme-update">Save Changes</button>
+          <button type="button" class="btn btn-success" name="activity-update">Save Changes</button>
         </div>
       </div>
     </div>
   </div>
-      
+
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

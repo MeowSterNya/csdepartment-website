@@ -1,8 +1,7 @@
 <?php
 require("../includes/authenticate.php");
-require("../api/pages/club_read.php");
+require("../api/functions/club_read.php");
 header( "Access-Control-Allow-Origin: *" );
-require("../api/pages/club_read.php");
 header( "Content-Type: text/html; charset=UTF-8" );
 ?>
 
@@ -44,6 +43,12 @@ header( "Content-Type: text/html; charset=UTF-8" );
         </li>
         <li class="nav-item">
           <a class="nav-link" href="alumni">Alumni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="activity">Department Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="courses">Courses</a>
         </li>
       </ul>
         <?php
@@ -104,7 +109,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
             <td><?php echo $record->name; ?></td>
             <td><?php echo $record->description; ?></td>
           <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
-          <td><a class="btn btn-danger btn-sm" name="delete" href="">Delete</a></td>
+          <td><a class="btn btn-danger btn-sm" name="delete-club" href="../includes/delete.php?del=<?php echo $record->ID; ?>">Delete</a></td>
         </tr>
 
         <?php

@@ -48,6 +48,12 @@ if(isset($_SESSION["sessionPass"]))
         <li class="nav-item">
           <a class="nav-link" href="pages/alumni">Alumni</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/activity">Department Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/courses">Courses</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Admin Forms
@@ -201,6 +207,12 @@ else
         </li>
         <li class="nav-item">
           <a class="nav-link" href="pages/alumni">Alumni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/activity">Department Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/courses">Courses</a>
         </li>
       </ul>
       <form method="post" class="form-inline my-2 my-lg-0 mx-2">

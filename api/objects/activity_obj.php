@@ -1,9 +1,9 @@
 <?php
-class Clubs{
+class Activities{
 
     // database connection and table name
     private $conn;
-    private $table_name = "clubs";
+    private $table_name = "activities";
 
     // object properties
     public $id;
@@ -17,11 +17,11 @@ class Clubs{
         $this->conn = $db;
     }
 
-    // read clubs
+    // read activities
     function read(){
 
         // select all query
-        $query = "SELECT cb.id, cb.name, cb.description, cb.category_id FROM " . $this->table_name . " cb ";
+        $query = "SELECT act.id, act.name, act.description FROM " . $this->table_name . " act ";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);

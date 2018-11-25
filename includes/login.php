@@ -28,7 +28,7 @@
         </div>
         <div class="text-center">
           <button type="submit" name="login" class="btn btn-block btn-success">Login</button>
-          <a class="btn btn-block btn-danger" href="../" role="button">Cancel</a>
+          <a class="btn btn-block btn-danger" href="" role="button">Cancel</a>
         </div>
       </form>
     </div>

@@ -1,6 +1,7 @@
 <?php
   require_once("session.php");
-  require("functions.php");
+  require_once("create.php");
+  require_once("delete.php");
   session_start(); 
   login();
   logout();
@@ -21,14 +22,14 @@
       }
       else {
         echo "<p>Error: Your username or password is incorrect. Please re-enter your credentials.</p>";
-        echo "<p><a href='../'>Try Again</a></p>";
+        echo "<p><a href='../index'>Try Again</a></p>";
       }
     }
   }
 
   function query($query) 
   {
-    require_once("get_sel_db.php");
+    require_once("dbconfig.php");
     $st = $db->query($query);
     $success = $st->fetchAll(PDO::FETCH_ASSOC);
     require_once("close_db.php");

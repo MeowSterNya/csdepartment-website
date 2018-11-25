@@ -47,6 +47,12 @@ if(isset($_SESSION["sessionPass"]))
         <li class="nav-item">
           <a class="nav-link" href="../../pages/alumni">Alumni</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/activity">Department Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/courses">Courses</a>
+        </li>
         <li class="nav-item active dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Admin Forms

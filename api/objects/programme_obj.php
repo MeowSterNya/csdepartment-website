@@ -21,13 +21,7 @@ class Programmes{
     function read(){
 
         // select all query
-        $query = "SELECT
-                c.name as category_name, pg.id, pg.name, pg.duration, pg.category_id
-            FROM
-                " . $this->table_name . " pg
-                LEFT JOIN
-                    categories c
-                        ON pg.category_id = c.ID";
+        $query = "SELECT pg.id, pg.name, pg.duration FROM " . $this->table_name . " pg ";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);
