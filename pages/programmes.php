@@ -1,5 +1,11 @@
 <?php
-require("../includes/authenticate.php");  
+require("../includes/authenticate.php");
+require("../my_api/pages/programme_read.php");
+header( "Access-Control-Allow-Origin: *" );
+header( "Content-Type: text/html; charset=UTF-8" );
+header( "Access-Control-Allow-Methods: GET" );
+header( "Access-Control-Max-Age: 3600" );
+header( "Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With" );
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,13 +89,29 @@ require("../includes/authenticate.php");
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row"></th>
-          <td>stuff</td>
-          <td>php stuff</td>
-          <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
-          <td><a class="btn btn-danger btn-sm" name="delete" href="">Delete</a></td>
-        </tr>
+
+          <?php
+          $program_arr_php = json_decode($program_arr_json);
+          if ($program_arr_php != null )
+          {
+              $allRecords = $program_arr_php->records;
+          }
+
+          foreach ($allRecords as $record)
+          {
+          ?>
+          <tr>
+              <th scope="row"><?php echo $record->ID; ?></th>
+              <td><?php echo $record->name; ?></td>
+              <td><?php echo $record->duration; ?></td>
+              <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
+              <td><a class="btn btn-danger btn-sm" name="delete" href="">Delete</a></td>
+          </tr>
+
+          <?php
+          }
+          ?>
+
       </tbody>
     </table>
   </div>

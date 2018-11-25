@@ -1,5 +1,11 @@
 <?php
 require("../includes/authenticate.php");  
+require("../my_api/pages/alumni_read.php");
+header( "Access-Control-Allow-Origin: *" );
+header( "Content-Type: text/html; charset=UTF-8" );
+header( "Access-Control-Allow-Methods: GET" );
+header( "Access-Control-Max-Age: 3600" );
+header( "Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With" );
 ?>
 
 <!DOCTYPE html>
@@ -72,13 +78,23 @@ require("../includes/authenticate.php");
   <h1 class="text-center">Alumni</h1>
 
   <br>
+      <?php
+      $alumnis_arr_php = json_decode($alumnis_arr_json);
+      if ($alumnis_arr_php != null )
+      {
+          $allRecords = $alumnis_arr_php->records;
+      }
 
+      foreach ($allRecords as $record)
+      {
+      ?>
   <div class="card-deck">
     <div class="card text-center">
-      <img class="card-img-top staff-img mx-auto" src="../media/cslogo.svg" alt="alumni picture">
+      <img class="card-img-top staff-img mx-auto" src="<?php echo $record->photo_path;?>" alt="alumni picture">
+
       <div class="card-body">
-        <h5 class="card-title">insert name using php</h5>
-        <p class="card-text">insert age using php</p>
+        <h5 class="card-title"><?php echo $record->firstname." ".$record->lastname?></h5>
+          <p class="card-text"><?php $age = (date("Y/m/d") - $record->DOB); echo $age; ?> </p>
       </div>
       <div class="card-footer">
         <a class="btn btn-primary" data-toggle="collapse" href="#readmore1" role="button">More...</a>
@@ -87,29 +103,14 @@ require("../includes/authenticate.php");
         <div class="collapse multi-collapse" id="readmore1">
           <br>
           <div class="card card-body">
-            <p>research doc php goes here</p>
+            <p><?php echo $record->document_path ?></p>
           </div>
         </div>
       </div>
     </div>
-    <div class="card text-center">
-      <img class="card-img-top staff-img mx-auto" src="../media/cslogo.svg" alt="alumni picture">
-      <div class="card-body">
-        <h5 class="card-title">insert name using php</h5>
-        <p class="card-text">insert age using php</p>
-      </div>
-      <div class="card-footer">
-        <a class="btn btn-primary" data-toggle="collapse" href="#readmore2" role="button">More...</a>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit-modal">Edit</button>
-        <a class="btn btn-danger" name="delete" href="">Delete</a>
-        <div class="collapse multi-collapse" id="readmore2">
-          <br>
-          <div class="card card-body">
-            <p>research doc php goes here</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php
+        }
+    ?>
   </div>
 
   <!-- Edit Form -->

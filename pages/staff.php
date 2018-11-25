@@ -1,5 +1,11 @@
 <?php
   require("../includes/authenticate.php");
+require("../my_api/pages/staff_read.php");
+header( "Access-Control-Allow-Origin: *" );
+header( "Content-Type: text/html; charset=UTF-8" );
+header( "Access-Control-Allow-Methods: GET" );
+header( "Access-Control-Max-Age: 3600" );
+header( "Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With" );
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,44 +77,40 @@
 
   <br>
 
-  <div class="card-deck">
-    <div class="card text-center">
-      <img class="card-img-top staff-img mx-auto" src="../media/cslogo.svg" alt="staff picture">
-      <div class="card-body">
-        <h5 class="card-title">insert name using php</h5>
-        <p class="card-text">insert age using php</p>
-      </div>
-      <div class="card-footer">
-        <a class="btn btn-primary" data-toggle="collapse" href="#readmore1" role="button">More...</a>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit-modal">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
-        <div class="collapse multi-collapse" id="readmore1">
-          <br>
-          <div class="card card-body">
-            <p>research doc php goes here</p>
+      <?php
+      $staffs_arr_php = json_decode($staffs_arr_json);
+      if ($staffs_arr_php != null )
+      {
+          $allRecords = $staffs_arr_php->records;
+      }
+
+      foreach ($allRecords as $record)
+      {
+      ?>
+      <div class="card-deck">
+          <div class="card text-center">
+              <img class="card-img-top staff-img mx-auto" src="<?php echo $record->photo_path;?>" alt="alumni picture">
+
+              <div class="card-body">
+                  <h5 class="card-title"><?php echo $record->firstname." ".$record->lastname?></h5>
+                  <p class="card-text"><?php $age = (date("Y/m/d") - $record->DOB); echo $age; ?> </p>
+              </div>
+              <div class="card-footer">
+                  <a class="btn btn-primary" data-toggle="collapse" href="#readmore1" role="button">More...</a>
+                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit-modal">Edit</button>
+                  <a class="btn btn-danger" name="delete" href="">Delete</a>
+                  <div class="collapse multi-collapse" id="readmore1">
+                      <br>
+                      <div class="card card-body">
+                          <p><?php echo $record->document_path ?></p>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-      </div>
+          <?php
+      }
+          ?>
     </div>
-    <div class="card text-center">
-      <img class="card-img-top staff-img mx-auto" src="../media/cslogo.svg" alt="staff picture">
-      <div class="card-body">
-        <h5 class="card-title">insert name using php</h5>
-        <p class="card-text">insert age using php</p>
-      </div>
-      <div class="card-footer">
-        <a class="btn btn-primary" data-toggle="collapse" href="#readmore2" role="button">More...</a>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit-modal">Edit</button>
-        <a class="btn btn-danger" name="delete" href="">Delete</a>
-        <div class="collapse multi-collapse" id="readmore2">
-          <br>
-          <div class="card card-body">
-            <p>research doc php goes here</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Edit Form -->
   <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog">

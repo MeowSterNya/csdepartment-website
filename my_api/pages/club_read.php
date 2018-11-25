@@ -5,7 +5,7 @@ header("Content-Type: application/json; charset=UTF-8");
 // database connection will be here
 // include database and object files
 include_once '../my_api/config/database.php';
-include_once '../my_api/objects/club.php';
+include_once '../my_api/objects/club_obj.php';
 
 // instantiate database and club object
 $database = new Database();
