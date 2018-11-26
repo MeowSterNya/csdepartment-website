@@ -36,6 +36,9 @@ i {
 }
 
 
+
+
+
 .parallax {
 
   background-image: url("../media/parallax.jpg");
@@ -77,7 +80,10 @@ i {
   color: #fff;
   padding: 1rem;
   font-size: 2rem;
+
 }
+
+
 
 .arrow {
   font-size: 50px;
