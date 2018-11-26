@@ -14,7 +14,6 @@ class Courses{
     public $programme_id;
     public $programme_name;
 
-
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;

@@ -9,8 +9,6 @@ class Programmes{
     public $id;
     public $name;
     public $duration;
-    public $category_id;
-
 
     // constructor with $db as database connection
     public function __construct($db){

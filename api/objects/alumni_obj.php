@@ -7,12 +7,12 @@ class Alumnis{
 
     // object properties
     public $id;
-    public $name;
+    public $firstname;
     public $lastname;
     public $DOB;
     public $photo;
     public $document;
-    public $category_id;
+    public $age;
 
     // constructor with $db as database connection
     public function __construct($db){

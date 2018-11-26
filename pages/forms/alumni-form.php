@@ -22,7 +22,7 @@ if(isset($_SESSION["sessionPass"]))
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="">
+    <a class="navbar-brand" href="../../index">
       <img src="../../media/cslogo.svg" width="30" height="30" class="d-inline-block align-top" alt="Department of Computer Science Logo">
       Department of Computer Science
     </a>
@@ -52,6 +52,9 @@ if(isset($_SESSION["sessionPass"]))
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../../pages/courses">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/undergraduate">Undergraduate</a>
         </li>
         <li class="nav-item active dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
