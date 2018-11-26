@@ -1,14 +1,12 @@
 <?php
     // required headers
-    header("Access-Control-Allow-Headers: access");
     header("Access-Control-Allow-Methods: GET");
-    header("Access-Control-Allow-Credentials: true");
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json; charset=UTF-8");
     
     // include database and object files
-    include_once '~/../../config/database.php';
-    include_once '~/../../objects/club_obj.php';
+    include_once '../api/config/database.php';
+    include_once '../api/objects/club_obj.php';
         
     // get database connection
     $database = new Database();
@@ -18,17 +16,23 @@
     $club = new Clubs($db);
     
     // set ID property of record to read
-    $club->id = isset($_GET['ID']) ? $_GET['ID'] : die();
-    
+   // $club->id = isset($_GET['ID']) ? $_GET['ID'] : die();
+    if(isset($_GET['club-edit']))
+    //if(isset($_GET['club-edit']))
+    {
+        $get_id = $_GET['club-edit'];
+        echo $get_id." ". "This is get id"."   ";
+        $club->id = $get_id;
+        echo $club->id." ". "This is club id";
     // read the details of club to be edited
     $club->readOne();
     
     if($club->id!=null){
         // create array
         $club_arr_one = array(
-            "ID" => $id,
-            "name" => $name,
-            "description" => html_entity_decode($description)
+            "id" => $club->id,
+            "name" => $club->name,
+            "description" => html_entity_decode($club->description)
         );
     
         // set response code - 200 OK
@@ -44,5 +48,6 @@
     
         // tell the user club does not exist
         echo json_encode(array("message" => "Club does not exist."));
+    }
     }
 ?>

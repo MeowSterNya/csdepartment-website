@@ -55,6 +55,7 @@ class Clubs{
           $this->id = $row['id'];
           $this->name = $row['name'];
           $this->description = $row['description'];
+        echo $row['id'];
     }
 }
 ?>
