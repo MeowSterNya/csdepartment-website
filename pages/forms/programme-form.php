@@ -84,7 +84,7 @@ if(isset($_SESSION["sessionPass"]))
         <br>
         <div class="form-group">
           <label for="name">Programme Name</label>
-          <input type="text" class="form-control form-control-sm" name="name" placeholder="Enter programme name">
+          <input type="text" class="form-control form-control-sm" name="name" placeholder="Enter programme name" required>
         </div>
         <div class="form-group">
           <label for="programme-year">Programme Duration</label>

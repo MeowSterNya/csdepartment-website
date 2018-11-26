@@ -84,11 +84,11 @@ if(isset($_SESSION["sessionPass"]))
         <br>
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control form-control-sm" name="club-name" placeholder="Enter club name">
+          <input type="text" class="form-control form-control-sm" name="club-name" placeholder="Enter club name" required>
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-            <input type="text" class="form-control form-control-sm" name="club-description" placeholder="Enter club description">
+            <input type="text" class="form-control form-control-sm" name="club-description" placeholder="Enter club description" required>
         </div>
         <div class="text-center">
           <button type="submit" name="club-form" class="btn btn-block btn-success">Add Club</button>
