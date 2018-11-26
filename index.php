@@ -97,7 +97,7 @@ if(isset($_SESSION["sessionPass"]))
     <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
   </div>
 
-  <div class="parallax3"></div>
+  <!-- <div class="parallax3"></div> -->
   
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -197,7 +197,7 @@ else
     <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
   </div>
 
-  <div class="parallax3"></div>
+  <!-- <div class="parallax3"></div> -->
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
