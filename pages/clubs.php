@@ -1,7 +1,8 @@
 <?php
 require("../includes/authenticate.php");
 require("../api/functions/club_read.php");
-include("../api/functions/club_read_one.php");
+require("../api/functions/club_read_one.php");
+require("../api/functions/club_update.php");
 header( "Access-Control-Allow-Origin: *" );
 header( "Content-Type: text/html; charset=UTF-8" );
 ?>
@@ -109,7 +110,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <th scope="row"><?php echo $record->ID; ?></th>
             <td><?php echo $record->name; ?></td>
             <td><?php echo $record->description; ?></td>
-            <td><form><button type="submit" name="club-edit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal" value="<?php echo $record->ID;?>">Edit</button></form></td>
+            <td><form><button type="submit" name="club-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form></td>
             <td><form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-club" value="<?php echo $record->ID;?>">Delete</button></form></td>
         </tr>
 
@@ -119,14 +120,16 @@ header( "Content-Type: text/html; charset=UTF-8" );
       </tbody>
     </table>
   </div>
-
+      <?php
+      if(isset($_GET["club-edit"]))
+      {?>
   <!-- Edit Form -->
-  <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Edit Club</h5>
-          <button type="button" class="close" data-dismiss="modal">
+  <div>
+    <div>
+      <div>
+        <div >
+          <h5>Edit Club</h5>
+          <button type="button" class="close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -139,12 +142,12 @@ header( "Content-Type: text/html; charset=UTF-8" );
               }
           foreach ($onerecord as $record)
           {
-          ?>
-        <div class="modal-body">
+         ?>
+        <div>
           <form method="post">
               <div class="form-group">
-                  <label for="name">ID -<?php echo $row['id'];?></label>
-                  <input type="hidden" class="form-control" name="club-id" value="<?php echo $row['id']; ?>">
+                  <label for="name">ID -<?php echo $record->id;?></label>
+                  <input type="hidden" class="form-control" name="club-id" value="<?php echo $record->id; ?>">
               </div>
             <div class="form-group">
               <label for="name">Name</label>
@@ -154,20 +157,23 @@ header( "Content-Type: text/html; charset=UTF-8" );
               <label for="description">Description</label>
                 <input type="text" class="form-control" name="club-description" value="<?php echo $record->description ?>">
             </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <div>
+                  <button type="button" class="btn btn-danger" >Close</button>
                   <button type="submit" class="btn btn-success" name="club-update">Save Changes</button>
               </div>
           </form>
-        </div>
+          </div>
         <?php
-              }
+         }
+
         ?>
 
       </div>
     </div>
   </div>
 
+  <?php  }
+      ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

@@ -21,25 +21,27 @@
     //if(isset($_GET['club-edit']))
     {
         $get_id = $_GET['club-edit'];
-        echo $get_id." ". "This is get id"."   ";
         $club->id = $get_id;
-        echo $club->id." ". "This is club id";
     // read the details of club to be edited
     $club->readOne();
     
+        $clubs_arr_one=array();
+        $clubs_arr_one["records"]=array();
+
     if($club->id!=null){
         // create array
-        $club_arr_one = array(
+        $club_item = array(
             "id" => $club->id,
             "name" => $club->name,
-            "description" => html_entity_decode($club->description)
+            "description" => html_entity_decode($club->description),
+            "category_id" => $club->category_id
         );
-    
+        array_push($clubs_arr_one["records"], $club_item);
         // set response code - 200 OK
         http_response_code(200);
 
         // make it json format
-        echo json_encode($club_arr_one);
+        $clubs_arr_one_json = json_encode($clubs_arr_one);
     }
     
     else{
