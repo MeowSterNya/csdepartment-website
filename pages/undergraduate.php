@@ -1,6 +1,6 @@
 <?php
 require("../includes/authenticate.php");
-//require("../api/functions/undergraduate_read.php");
+require("../api/functions/undergraduate_read.php");
 header( "Access-Control-Allow-Origin: *" );
 header( "Content-Type: text/html; charset=UTF-8" );
 ?>
@@ -114,8 +114,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
               <th scope="row"><?php echo $record->ID; ?></th>
               <td><?php echo $record->researchers; ?></td>
               <td><?php echo $record->abstract; ?></td>
-              <td><?php echo $record->document; ?></td>
-              <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
+              <td><a href="<?php echo $record->document ?>"></a></td>
+              <td><form><button type="submit" name="undergraduate-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form></td>
               <td><form><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')" name="delete-undergraduate" value="<?php echo $record->ID;?>">Delete</button></form></td>
           </tr>
 
@@ -133,39 +133,33 @@ header( "Content-Type: text/html; charset=UTF-8" );
   </div>
 
   <!-- Edit Form -->
-  <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Edit Undergraduate</h5>
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-        <form method="post" class="col-5">
-          <div class="form-group">
-            <label for="researcher">Researcher/Researchers</label>
-            <input type="text" class="form-control form-control-sm" name="researcher">
-          </div>
-          <div class="form-group">
-            <label for="abstract">Research Abstract</label>
-            <input type="text" class="form-control form-control-sm" name="abstract">
-          </div>
-          <div class="form-group">
-            <label for="research">Research document</label>
-            <input type="file" class="form-control-file" name="research">
-          </div>
-        </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" name="undergraduate-update">Save Changes</button>
-        </div>
+      <?php
+      if(isset($_GET["undergraduate-edit-edit"]))
+         {?>
+  <div class="row justify-content-center align-items-center">
+    <form method="post" class="col-5">
+      <h5>Edit Undergraduate</h5>
+      <div class="form-group">
+        <label for="researcher">Researcher/Researchers</label>
+        <input type="text" class="form-control form-control-sm" name="researcher">
       </div>
-    </div>
+      <div class="form-group">
+        <label for="abstract">Research Abstract</label>
+        <input type="text" class="form-control form-control-sm" name="abstract">
+      </div>
+      <div class="form-group">
+        <label for="research">Research document</label>
+        <input type="file" class="form-control-file" name="research">
+      </div>
+      <div class="form-group">
+        <a name="edit-close" class="btn btn-danger" href="undergraduate" role="button">Close</a>
+        <button type="button" class="btn btn-success" name="undergraduate-update">Save Changes</button>
+      </div>
+    </form>
   </div>
-      
+      <?php
+     }
+      ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

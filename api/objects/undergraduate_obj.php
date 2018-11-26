@@ -1,5 +1,5 @@
 <?php
-class UndergradResearch{
+class Undergraduates{
 
     // database connection and table name
     private $conn;

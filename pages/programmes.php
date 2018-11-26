@@ -113,7 +113,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
               <th scope="row"><?php echo $record->ID; ?></th>
               <td><?php echo $record->name; ?></td>
               <td><?php echo $record->duration; ?></td>
-              <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
+              <td><form><button type="submit" name="programmes-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form></td>
               <td><form><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')" name="delete-programme" value="<?php echo $record->ID;?>">Delete</button></form></td>
           </tr>
 
@@ -131,40 +131,34 @@ header( "Content-Type: text/html; charset=UTF-8" );
   </div>
 
   <!-- Edit Form -->
-  <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Edit Programme</h5>
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form method="post">
-            <div class="form-group">
-              <label for="name">Programme Name</label>
-              <input type="text" class="form-control form-control-sm" name="name" value="<?php ?>">
-            </div>
-            <div class="form-group">
-              <label for="programme-year">Programme Duration</label>
-              <select class="form-control" name="programme-duration">
-                <option value="1">1 year</option>
-                <option value="2">2 years</option>
-                <option value="3">3 years</option>
-                <option value="4">4 years</option>
-              </select>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" name="programme-update">Save Changes</button>
-        </div>
+      <?php
+      if(isset($_GET["programmes-edit-edit"]))
+         {?>
+  <div class="row justify-content-center align-items-center">
+    <form method="post" class="col-5">
+      <h5>Edit Programme</h5>
+      <div class="form-group">
+        <label for="name">Programme Name</label>
+        <input type="text" class="form-control form-control-sm" name="name" value="<?php ?>">
       </div>
-    </div>
+      <div class="form-group">
+        <label for="programme-year">Programme Duration</label>
+        <select class="form-control" name="programme-duration">
+          <option value="1">1 year</option>
+          <option value="2">2 years</option>
+          <option value="3">3 years</option>
+          <option value="4">4 years</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <a name="edit-close" class="btn btn-danger" href="programmes" role="button">Close</a>
+        <button type="button" class="btn btn-success" name="programme-update">Save Changes</button>
+      </div>
+    </form>
   </div>
-      
+      <?php
+      }
+         ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

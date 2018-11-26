@@ -113,7 +113,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <th scope="row"><?php echo $record->ID; ?></th>
             <td><?php echo $record->name; ?></td>
             <td><?php echo $record->description; ?></td>
-            <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
+            <td><form><button type="submit" name="activity-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form></td>
             <td><form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-activity" value="<?php echo $record->ID;?>">Delete</button></form></td>
         </tr>
 
@@ -131,35 +131,30 @@ header( "Content-Type: text/html; charset=UTF-8" );
   </div>
 
   <!-- Edit Form -->
-  <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Edit Activity</h5>
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form method="post">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" name="name" value="<?php ?>">
-            </div>
-            <div class="form-group">
-              <label for="description">Description</label>
-              <input type="text" class="form-control" name="description" value="<?php ?>">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" name="activity-update">Save Changes</button>
-        </div>
+      <?php
+      if(isset($_GET['alumni-edit']))
+      {?>
+  <div class="row justify-content-center align-items-center">
+    <form method="post" class="col-5">
+      <h5>Edit Activity</h5>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" value="<?php ?>">
       </div>
-    </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" name="description" value="<?php ?>">
+      </div>
+      <div class="form-group">
+        <a name="edit-close" class="btn btn-danger" href="activity" role="button">Close</a>
+        <button type="submit" class="btn btn-success" name="activity-update">Save Changes</button>
+      </div>
+    </form>
   </div>
 
+  <?php
+        }
+    ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

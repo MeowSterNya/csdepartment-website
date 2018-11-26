@@ -22,7 +22,7 @@ if(isset($_SESSION["sessionPass"]))
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="">
       <img src="media/cslogo.svg" width="30" height="30" class="d-inline-block align-top" alt="Department of Computer Science Logo">
       Department of Computer Science
@@ -78,76 +78,25 @@ if(isset($_SESSION["sessionPass"]))
     </div>
   </nav>
 
-  <div id="carousel1" class="carousel slide carousel-fade">
-    <ol class="carousel-indicators">
-      <li data-target="#carousel1" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel1" data-slide-to="1"></li>
-      <li data-target="#carousel1" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="media/img1.jpg" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="media/img2.jpg" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="media/img3.jpg" alt="Third slide">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">About Us</h1>
-      <p class="lead">*insert cool about us info here*</p>
+  <div class="parallax">
+    <div class="caption">
+      <span class="border">Department of Computer Science</span>
     </div>
   </div>
 
-  <br>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Programmes Offered</h1>
-      <p class="lead">*insert programme info here*</p>
-    </div>
+  <div class="py-4 text-center">
+    <h1 class="display-4">About Us</h1>
   </div>
 
-  <br>
+  <div class="parallax2"></div>
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Alumni</h1>
-      <p class="lead">*insert alumni info here*</p>
-    </div>
+  <div class="py-4 text-center">
+    <h1 class="display-4">Contact Us</h1>
+    <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button"><i class="fas fa-envelope"></i> csdept@uni.com</a>
+    <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
   </div>
 
-  <br>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Staff</h1>
-      <p class="lead">*insert staff info here*</p>
-    </div>
-  </div>
-
-  <br>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Contact Us</h1>
-      <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button"><i class="fas fa-envelope"></i> csdept@uni.com</a>
-      <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
-    </div>
-  </div>
+  <div class="parallax3"></div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -185,7 +134,7 @@ else
   <title>Department of Computer Science</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="">
       <img src="media/cslogo.svg" width="30" height="30" class="d-inline-block align-top" alt="Department of Computer Science Logo">
       Department of Computer Science
@@ -227,78 +176,29 @@ else
     </div>
   </nav>
 
-  <div id="carousel1" class="carousel slide carousel-fade">
-    <ol class="carousel-indicators">
-      <li data-target="#carousel1" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel1" data-slide-to="1"></li>
-      <li data-target="#carousel1" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="media/img1.jpg" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="media/img2.jpg" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="media/img3.jpg" alt="Third slide">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">About Us</h1>
-      <p class="lead">*insert cool about us info here*</p>
+  <div class="parallax">
+    <div class="caption">
+      <span class="border">Department of Computer Science</span>
     </div>
   </div>
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Programmes Offered</h1>
-      <p class="lead">*insert programme info here*</p>
-    </div>
+  <div class="py-4 text-center">
+    <h1 class="display-4">About Us</h1>
   </div>
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Alumni</h1>
-      <p class="lead">*insert alumni info here*</p>
-    </div>
+  <div class="parallax2"></div>
+
+  <div class="py-4 text-center">
+    <h1 class="display-4">Contact Us</h1>
+    <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button"><i class="fas fa-envelope"></i> csdept@uni.com</a>
+    <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
   </div>
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Staff</h1>
-      <p class="lead">*insert staff info here*</p>
-    </div>
-  </div>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Contact Us</h1>
-      <a class="btn btn-primary" href="mailto:csdept@uni.com" role="button"><i class="fas fa-envelope"></i> csdept@uni.com</a>
-      <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
-    </div>
-  </div>
+  <div class="parallax3"></div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script>
-    $('.carousel').carousel({
-      interval: 2000,
-      wrap: true
-    });
-  </script>
 </body>
 </html> 
  

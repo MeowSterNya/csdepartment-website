@@ -119,7 +119,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
               <td><?php echo $record->description; ?></td>
               <td><?php echo $record->course_year; ?></td>
               <td><?php echo $record->programme_name; ?></td>
-              <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
+              <td><form><button type="submit" name="courses-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form></td>
               <td><form><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')" name="delete-courses" value="<?php echo $record->ID;?>">Delete</button></form></td>
           </tr>
 
@@ -136,40 +136,61 @@ header( "Content-Type: text/html; charset=UTF-8" );
   </div>
 
   <!-- Edit Form -->
-  <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Edit Programme</h5>
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
+      <?php
+      if(isset($_GET["courses-edit-edit"]))
+         {?>
+  <div class="row justify-content-center align-items-center">
+    <form method="post" class="col=5">
+      <h5>Edit Course</h5>
+      <div class="form-group">
+          <label for="name">Course Name</label>
+          <input type="text" class="form-control form-control-sm" name="course-name">
         </div>
-        <div class="modal-body">
-          <form method="post">
-            <div class="form-group">
-              <label for="name">Programme Name</label>
-              <input type="text" class="form-control form-control-sm" name="name" value="<?php ?>">
-            </div>
-            <div class="form-group">
-              <label for="programme-year">Programme Duration</label>
-              <select class="form-control" name="programme-duration">
-                <option value="1">1 year</option>
-                <option value="2">2 years</option>
-                <option value="3">3 years</option>
-                <option value="4">4 years</option>
-              </select>
-            </div>
-          </form>
+        <div class="form-group">
+          <label for="course-code">Course Code</label>
+          <input type="text" class="form-control form-control-sm" name="course-code">
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" name="programme-update">Save Changes</button>
+        <div class="form-group">
+          <label for="course-description">Description</label>
+          <input type="text" class="form-control form-control-sm" name="course-description">
         </div>
+        <div class="form-group">
+          <label for="course-year">Select Course Year</label>
+          <select class="form-control" name="course-year">
+            <option value="First year">First year</option>
+            <option value="Second year">Second year</option>
+            <option value="Third year">Third year</option>
+            <option value="Fourth year">Fourth year</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="programme">Select Programme</label>
+
+          <select class="form-control" name="programme">
+          <?php
+            $programme_arr_php = json_decode($programme_arr_json);
+            if ($programme_arr_php != null )
+            {
+                $allRecords = $programme_arr_php->records;
+            }
+            foreach ($allRecords as $record)
+            {
+          ?>
+            <option value="<?php echo $record->ID; ?>"><?php echo $record->name; ?></option>
+              <?php
+            }
+              ?>
+          </select>
+        </div>
+      <div class="form-group">
+        <a name="edit-close" class="btn btn-danger" href="courses" role="button">Close</a>
+        <button type="button" class="btn btn-success" name="programme-update">Save Changes</button>
       </div>
-    </div>
+    </form>
   </div>
-      
+    <?php
+      }
+         ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>
