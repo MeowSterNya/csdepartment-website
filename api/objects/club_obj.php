@@ -9,9 +9,7 @@ class Clubs{
     public $id;
     public $name;
     public $description;
-    public $category_id;
     public $edit_id;
-
 
     // constructor with $db as database connection
     public function __construct($db){

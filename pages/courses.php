@@ -50,6 +50,9 @@ header( "Content-Type: text/html; charset=UTF-8" );
         <li class="nav-item active">
           <a class="nav-link" href="courses">Courses</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="undergraduate">Undergraduate</a>
+        </li>
       </ul>
         <?php
         if(isset($_SESSION["sessionPass"]))

@@ -9,8 +9,6 @@ class Activities{
     public $id;
     public $name;
     public $description;
-    public $category_id;
-
 
     // constructor with $db as database connection
     public function __construct($db){

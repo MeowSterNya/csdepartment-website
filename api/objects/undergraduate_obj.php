@@ -1,18 +1,15 @@
 <?php
-class Staffs{
+class UndergradResearch{
 
     // database connection and table name
     private $conn;
-    private $table_name = "staff";
+    private $table_name = "undergraduate_research";
 
     // object properties
     public $id;
-    public $firstname;
-    public $lastname;
-    public $DOB;
-    public $photo;
+    public $researchers;
+    public $abstract;
     public $document;
-    public $age;
 
     // constructor with $db as database connection
     public function __construct($db){
@@ -23,7 +20,7 @@ class Staffs{
     function read(){
 
         // select all query
-        $query = "SELECT sf.ID, sf.firstname, sf.lastname, sf.DOB, sf.photo_path, sf.document_path FROM " . $this->table_name . " sf ";
+        $query = "SELECT u.ID, u.researchers, u.abstract, u.document_path FROM " . $this->table_name . " u ";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);

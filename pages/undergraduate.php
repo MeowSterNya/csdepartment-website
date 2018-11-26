@@ -1,8 +1,6 @@
 <?php
 require("../includes/authenticate.php");
-require("../api/functions/club_read.php");
-require("../api/functions/club_read_one.php");
-require("../api/functions/club_update.php");
+//require("../api/functions/undergraduate_read.php");
 header( "Access-Control-Allow-Origin: *" );
 header( "Content-Type: text/html; charset=UTF-8" );
 ?>
@@ -16,7 +14,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/css.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../favicon.png">
-  <title>Clubs</title>
+  <title>Undergraduate Research</title>
 </head>
 <body>
 
@@ -41,7 +39,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <a class="nav-link" href="staff">Staff</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="clubs">Clubs</a>
+          <a class="nav-link" href="clubs">Clubs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="alumni">Alumni</a>
@@ -52,7 +50,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
         <li class="nav-item">
           <a class="nav-link" href="courses">Courses</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="undergraduate">Undergraduate</a>
         </li>
       </ul>
@@ -67,11 +65,11 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <button class="btn btn-outline-danger my-2 my-sm-0" name="logout" type="submit">Logout</button>
         </form>
       <?php }
-        }
+        } 
         else
         {
         ?>
-
+       
         <form action="../index.php" method="post" class="form-inline my-2 my-lg-0">
           <button class="btn btn-outline-success my-2 my-sm-0" name="nav-login" type="submit">Login</button>
         </form>
@@ -83,100 +81,84 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
   <br>
 
-  <h1 class="text-center">Clubs</h1>
+  <h1 class="text-center">Programmes Offered</h1>
 
   <br>
 
-  <!-- Table -->
   <div class="table-responsive">
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">Description</th>
+          <th scope="col">Researchers</th>
+          <th scope="col">Abstract</th>
+          <th scope="col">Research Document</th>
           <th scope="col" colspan="2">Functions</th>
         </tr>
       </thead>
       <tbody>
-       <?php
-          $clubs_arr_php = json_decode($clubs_arr_json);
-          if ($clubs_arr_php != null )
-              {
-                  $allRecords = $clubs_arr_php->records;
-              }
 
-            foreach ($allRecords as $record)
-            {
+          <?php
+          $undergraduates_arr_php = json_decode($undergraduates_arr_json);
+          if ($undergraduates_arr_php != null )
+          {
+              $allRecords = $undergraduates_arr_php->records;
+          }
+
+          foreach ($allRecords as $record)
+          {
           ?>
-        <tr>
-          <th scope="row"><?php echo $record->ID; ?></th>
-            <td><?php echo $record->name; ?></td>
-            <td><?php echo $record->description; ?></td>
-            <td><form><button type="submit" name="club-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form></td>
-            <td><form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-club" value="<?php echo $record->ID;?>">Delete</button></form></td>
-        </tr>
+          <tr>
+              <th scope="row"><?php echo $record->ID; ?></th>
+              <td><?php echo $record->researchers; ?></td>
+              <td><?php echo $record->abstract; ?></td>
+              <td><?php echo $record->document; ?></td>
+              <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
+              <td><form><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')" name="delete-undergraduate" value="<?php echo $record->ID;?>">Delete</button></form></td>
+          </tr>
 
-        <?php
-            }
-        ?>
+          <?php
+          }
+          ?>
+
       </tbody>
     </table>
   </div>
-      <?php
-      if(isset($_GET["club-edit"]))
-      {?>
+
   <!-- Edit Form -->
-  <div>
-    <div>
-      <div>
-        <div >
-          <h5>Edit Club</h5>
-          <button type="button" class="close">
+  <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Undergraduate</h5>
+          <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <?php
-
-          $clubs_arr_one_php = json_decode($clubs_arr_one_json);
-          if ($clubs_arr_one_php != null )
-              {
-                  $onerecord = $clubs_arr_one_php->records;
-              }
-          foreach ($onerecord as $record)
-          {
-         ?>
-        <div>
-          <form method="post">
-              <div class="form-group">
-                  <label for="name">ID -<?php echo $record->id;?></label>
-                  <input type="hidden" class="form-control" name="club-id" value="<?php echo $record->id; ?>">
-              </div>
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" name="club-name" value="<?php echo $record->name ?>">
-            </div>
-            <div class="form-group">
-              <label for="description">Description</label>
-                <input type="text" class="form-control" name="club-description" value="<?php echo $record->description ?>">
-            </div>
-              <div>
-                  <button type="button" class="btn btn-danger" >Close</button>
-                  <button type="submit" class="btn btn-success" name="club-update">Save Changes</button>
-              </div>
-          </form>
+        <div class="modal-body">
+        <form method="post" class="col-5">
+          <div class="form-group">
+            <label for="researcher">Researcher/Researchers</label>
+            <input type="text" class="form-control form-control-sm" name="researcher">
           </div>
-        <?php
-         }
-
-        ?>
-
+          <div class="form-group">
+            <label for="abstract">Research Abstract</label>
+            <input type="text" class="form-control form-control-sm" name="abstract">
+          </div>
+          <div class="form-group">
+            <label for="research">Research document</label>
+            <input type="file" class="form-control-file" name="research">
+          </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" name="undergraduate-update">Save Changes</button>
+        </div>
       </div>
     </div>
   </div>
-
-  <?php  }
-      ?>
+      
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>
