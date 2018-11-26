@@ -2,10 +2,6 @@ html, body {
   height: 100%;
 }
 
-.jumbotron {
-  margin-bottom: 0;
-}
-
 .bg-image {
   background-image: url("../media/bg-img.jpg");
   background-color: #121212;
@@ -30,12 +26,6 @@ i {
 
 .staff-img {
   width:50%;
-}
-
-.home-img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: fill;
 }
 
 .parallax { 
@@ -77,5 +67,10 @@ i {
   background-color: #121212;
   color: #fff;
   padding: 1rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+
+.arrow {
+  font-size: 50px;
+  color: white;
 }
