@@ -103,13 +103,13 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <p class="card-text"><?php $age = (date("Y/m/d") - $record->DOB); echo $age; ?> </p>
       </div>
       <div class="card-footer">
-        <a class="btn btn-primary" data-toggle="collapse" href="#readmore1" role="button">More...</a>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit-modal">Edit</button>
-          <td><form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-alumni" value="<?php echo $record->ID;?>">Delete</button></form></td>
-        <div class="collapse multi-collapse" id="readmore1">
+        <a class="btn btn-primary" data-toggle="collapse" href="#readmore" role="button">More...</a>
+        <form><button type="submit" name="alumni-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form>
+        <form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-alumni" value="<?php echo $record->ID;?>">Delete</button></form>
+        <div class="collapse multi-collapse" id="readmore">
           <br>
           <div class="card card-body">
-            <p><?php echo $record->document_path ?></p>
+            <a href="<?php echo $record->document_path ?>"></a>
           </div>
         </div>
       </div>
@@ -120,45 +120,34 @@ header( "Content-Type: text/html; charset=UTF-8" );
   </div>
 
   <!-- Edit Form -->
-  <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Edit Alumni</h5>
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form method="post">
-            <div class="form-group">
-              <label for="firstname">First Name</label>
-              <input type="text" class="form-control form-control-sm" name="firstname" value="<?php ?>">
-            </div>
-            <div class="form-group">
-              <label for="lastname">Last Name</label>
-              <input type="text" class="form-control form-control-sm" name="lastname" value="<?php ?>">
-            </div>
-            <div class="form-group">
-              <label for="dob">Date of Birth</label>
-              <input type="date" class="form-control form-control-sm" name="DOB" value="<?php ?>">
-            </div>
-            <div class="form-group">
-              <label for="photo">Alumni Photo</label>
-              <input type="file" class="form-control-file" name="photo" accept=".jpg, .jpeg, .png" value="<?php ?>">
-            </div>
-            <div class="form-group">
-              <label for="research">Research Portfolio document</label>
-              <input type="file" class="form-control-file" name="research" accept=".pdf" value="<?php ?>">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" name="alumni-update">Save Changes</button>
-        </div>
+  <div class="row justify-content-center align-items-center">
+    <form method="post" class="col-5">
+      <h5 class="modal-title">Edit Alumni</h5>
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control form-control-sm" name="firstname" value="<?php ?>">
       </div>
-    </div>
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control form-control-sm" name="lastname" value="<?php ?>">
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" class="form-control form-control-sm" name="DOB" value="<?php ?>">
+      </div>
+      <div class="form-group">
+        <label for="photo">Alumni Photo</label>
+        <input type="file" class="form-control-file" name="photo" accept=".jpg, .jpeg, .png" value="<?php ?>">
+      </div>
+      <div class="form-group">
+        <label for="research">Research Portfolio document</label>
+        <input type="file" class="form-control-file" name="research" accept=".pdf" value="<?php ?>">
+      </div>
+      <div class="form-group">
+        <a name="edit-close" class="btn btn-danger" href="alumni" role="button">Close</a>
+        <button type="button" class="btn btn-success" name="alumni-update">Save Changes</button>
+      </div>
+    </form>
   </div>
       
   </div>

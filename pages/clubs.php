@@ -81,102 +81,89 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
   <div class="container">
 
-  <br>
+    <br>
 
-  <h1 class="text-center">Clubs</h1>
+    <h1 class="text-center">Clubs</h1>
 
-  <br>
+    <br>
 
-  <!-- Table -->
-  <div class="table-responsive">
-    <table class="table table-striped table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">Description</th>
-          <th scope="col" colspan="2">Functions</th>
-        </tr>
-      </thead>
-      <tbody>
-       <?php
-          $clubs_arr_php = json_decode($clubs_arr_json);
-          if ($clubs_arr_php != null )
+    <!-- Table -->
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col" colspan="2">Functions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+            $clubs_arr_php = json_decode($clubs_arr_json);
+            if ($clubs_arr_php != null )
+                {
+                    $allRecords = $clubs_arr_php->records;
+                }
+
+              foreach ($allRecords as $record)
               {
-                  $allRecords = $clubs_arr_php->records;
+            ?>
+          <tr>
+            <th scope="row"><?php echo $record->ID; ?></th>
+              <td><?php echo $record->name; ?></td>
+              <td><?php echo $record->description; ?></td>
+              <td><form><button type="submit" name="club-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form></td>
+              <td><form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-club" value="<?php echo $record->ID;?>">Delete</button></form></td>
+          </tr>
+          <?php
               }
-
-            foreach ($allRecords as $record)
-            {
           ?>
-        <tr>
-          <th scope="row"><?php echo $record->ID; ?></th>
-            <td><?php echo $record->name; ?></td>
-            <td><?php echo $record->description; ?></td>
-            <td><form><button type="submit" name="club-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form></td>
-            <td><form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-club" value="<?php echo $record->ID;?>">Delete</button></form></td>
-        </tr>
-
-        <?php
-            }
-        ?>
-      </tbody>
-    </table>
-  </div>
-      <?php
-      if(isset($_GET["club-edit"])!=null)
-      {?>
-  <!-- Edit Form -->
-  <div>
-    <div>
-      <div>
-        <div >
-          <h5>Edit Club</h5>
-          <button type="button" class="close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <?php
-
-          $clubs_arr_one_php = json_decode($clubs_arr_one_json);
-          if ($clubs_arr_one_php != null )
-              {
-                  $onerecord = $clubs_arr_one_php->records;
-              }
-          foreach ($onerecord as $record)
-          {
-         ?>
-        <div>
-          <form method="post">
-              <div class="form-group">
-                  <label for="name">ID -<?php echo $record->id;?></label>
-                  <input type="hidden" class="form-control" name="club-id" value="<?php echo $record->id; ?>">
-              </div>
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" name="club-name" value="<?php echo $record->name ?>">
-            </div>
-            <div class="form-group">
-              <label for="description">Description</label>
-                <input type="text" class="form-control" name="club-description" value="<?php echo $record->description ?>">
-            </div>
-              <div>
-                  <button type="" name="edit-close" class="btn btn-danger"><a href="clubs">Close</a></button>
-                  <button type="submit" class="btn btn-success" name="club-update">Save Changes</button>
-              </div>
-          </form>
-          </div>
-        <?php
-         }
-
-        ?>
-
-      </div>
+        </tbody>
+      </table>
     </div>
-  </div>
-
-  <?php  }
+    <?php
+    if(isset($_GET["club-edit"])!=null)
+    {
+    ?>
+      <!-- Edit Form -->
+      <?php
+        $clubs_arr_one_php = json_decode($clubs_arr_one_json);
+        if ($clubs_arr_one_php != null )
+        {
+          $onerecord = $clubs_arr_one_php->records;
+        }
+        foreach ($onerecord as $record)
+        {
       ?>
+          <div class="row justify-content-center align-items-center">
+            <form method="post" class="col-5">
+              <h5>Edit Club</h5>
+              <div class="form-group">
+                <label for="name">ID -<?php echo $record->id;?></label>
+                <input type="hidden" class="form-control" name="club-id" value="<?php echo $record->id; ?>">
+              </div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="club-name" value="<?php echo $record->name ?>">
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" name="club-description" value="<?php echo $record->description ?>">
+              </div>
+              <div class="form-group">
+                <a name="edit-close" class="btn btn-danger" href="clubs" role="button">Close</a>
+                <button type="submit" class="btn btn-success" name="club-update">Save Changes</button>
+              </div>
+            </form>
+          </div>
+      <?php
+        }
+      ?>
+    <?php
+      }
+    ?>
+
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>
