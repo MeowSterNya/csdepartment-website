@@ -26,13 +26,10 @@ if(isset($_GET['club-edit']))
 // get id of club to be edited
 
     $get_id = $_GET['club-edit'];
-    echo $get_id." ". "This is get id"."   ";
     if(isset($_POST['club-update']))
     {
 // set ID property of club to be edited
     $club->id = $get_id;
-    echo $club->id." ". "This is club id";
-
     $name = $_POST["club-name"];
     $description = $_POST["club-description"];
     $category_id = 2;

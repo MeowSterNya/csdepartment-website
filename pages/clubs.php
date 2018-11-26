@@ -124,7 +124,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
     </table>
   </div>
       <?php
-      if(isset($_GET["club-edit"]))
+      if(isset($_GET["club-edit"])!=null)
       {?>
   <!-- Edit Form -->
   <div>
@@ -161,7 +161,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
                 <input type="text" class="form-control" name="club-description" value="<?php echo $record->description ?>">
             </div>
               <div>
-                  <button type="button" class="btn btn-danger" >Close</button>
+                  <button type="" name="edit-close" class="btn btn-danger"><a href="clubs">Close</a></button>
                   <button type="submit" class="btn btn-success" name="club-update">Save Changes</button>
               </div>
           </form>
