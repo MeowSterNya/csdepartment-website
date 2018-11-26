@@ -82,11 +82,11 @@ if(isset($_SESSION["sessionPass"]))
         <h3 class="text-center">Add Alumni</h3>
         <div class="form-group">
           <label for="firstname">First Name</label>
-          <input type="text" class="form-control form-control-sm" name="firstname" placeholder="Enter first name">
+          <input type="text" class="form-control form-control-sm" name="firstname" placeholder="Enter first name" required>
         </div>
         <div class="form-group">
           <label for="lastname">Last Name</label>
-          <input type="text" class="form-control form-control-sm" name="lastname" placeholder="Enter last name">
+          <input type="text" class="form-control form-control-sm" name="lastname" placeholder="Enter last name" required>
         </div>
         <div class="form-group">
           <label for="dob">Date of Birth</label>

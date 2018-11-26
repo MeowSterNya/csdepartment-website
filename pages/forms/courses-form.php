@@ -91,15 +91,15 @@ if(isset($_SESSION["sessionPass"]))
         <br>
         <div class="form-group">
           <label for="name">Course Name</label>
-          <input type="text" class="form-control form-control-sm" name="course-name" placeholder="Enter course name">
+          <input type="text" class="form-control form-control-sm" name="course-name" placeholder="Enter course name" required>
         </div>
         <div class="form-group">
           <label for="course-code">Course Code</label>
-          <input type="text" class="form-control form-control-sm" name="course-code" placeholder="CSE.... MTH....">
+          <input type="text" class="form-control form-control-sm" name="course-code" placeholder="CSE.... MTH...." required>
         </div>
         <div class="form-group">
           <label for="course-description">Description</label>
-          <input type="text" class="form-control form-control-sm" name="course-description" placeholder="Enter short course description">
+          <input type="text" class="form-control form-control-sm" name="course-description" placeholder="Enter short course description" required>
         </div>
         <div class="form-group">
           <label for="course-year">Select Course Year</label>

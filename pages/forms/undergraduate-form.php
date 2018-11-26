@@ -84,11 +84,11 @@ if(isset($_SESSION["sessionPass"]))
         <br>
         <div class="form-group">
           <label for="researcher">Researcher/Researchers</label>
-          <input type="text" class="form-control form-control-sm" name="researcher" placeholder="Enter names separated by commas">
+          <input type="text" class="form-control form-control-sm" name="researcher" placeholder="Enter names separated by commas" required>
         </div>
         <div class="form-group">
           <label for="abstract">Research Abstract</label>
-          <textarea class="form-control form-control-sm" name="abstract" placeholder="Enter research abstract"></textarea>
+          <input type="text" class="form-control form-control-sm" name="abstract" placeholder="Enter research abstract" required>
         </div>
         <div class="form-group">
           <label for="research">Add Research document</label>
