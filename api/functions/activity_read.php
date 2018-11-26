@@ -58,8 +58,6 @@
         http_response_code(404);
 
         // tell the user no activities found
-        echo json_encode(
-            array("message" => "No activities found.")
-        );
+
     }
 ?>

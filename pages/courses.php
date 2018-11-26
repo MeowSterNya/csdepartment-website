@@ -101,6 +101,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
       <tbody>
 
           <?php
+          if(!empty($course_arr_json))
+          {
           $course_arr_php = json_decode($course_arr_json);
           if ($course_arr_php != null )
           {
@@ -123,7 +125,11 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
           <?php
           }
-          ?>
+          }
+          else{?>
+          <th scope="col" colspan="7" class="text-center">No Courses Found</th><?php
+          } ?>
+
 
       </tbody>
     </table>

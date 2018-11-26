@@ -98,6 +98,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
       <tbody>
 
           <?php
+          if(!empty($programme_arr_json))
+          {
           $programme_arr_php = json_decode($programme_arr_json);
           if ($programme_arr_php != null )
           {
@@ -117,7 +119,12 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
           <?php
           }
-          ?>
+          }
+          else
+          {?>
+              <th scope="col" colspan="4" class="text-center">No Programmes Found</th><?php
+          }?>
+
 
       </tbody>
     </table>

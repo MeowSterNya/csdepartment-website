@@ -85,6 +85,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
   <br>
       <?php
+      if(!empty($alumnis_arr_json))
+      {
       $alumnis_arr_php = json_decode($alumnis_arr_json);
       if ($alumnis_arr_php != null )
       {
@@ -116,7 +118,11 @@ header( "Content-Type: text/html; charset=UTF-8" );
     </div>
     <?php
         }
-    ?>
+      }
+      else{?>
+          <h2 class="text-center">No Clubs Found</h2> <?php
+      } ?>
+
   </div>
 
   <!-- Edit Form -->

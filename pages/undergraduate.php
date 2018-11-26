@@ -99,6 +99,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
       <tbody>
 
           <?php
+          if(!empty($undergraduates_arr_json))
+          {
           $undergraduates_arr_php = json_decode($undergraduates_arr_json);
           if ($undergraduates_arr_php != null )
           {
@@ -119,7 +121,12 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
           <?php
           }
-          ?>
+          }
+          else
+          {?>
+          <th scope="col" colspan="5" class="text-center">No Undergraduates Found</th><?php
+          }?>
+
 
       </tbody>
     </table>

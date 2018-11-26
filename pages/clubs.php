@@ -100,12 +100,14 @@ header( "Content-Type: text/html; charset=UTF-8" );
       </thead>
       <tbody>
        <?php
+          if(!empty($clubs_arr_json))
+          {
           $clubs_arr_php = json_decode($clubs_arr_json);
           if ($clubs_arr_php != null )
               {
                   $allRecords = $clubs_arr_php->records;
-              }
 
+            }
             foreach ($allRecords as $record)
             {
           ?>
@@ -119,6 +121,12 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
         <?php
             }
+
+          }
+          else
+          {?>
+            <th scope="col" colspan="4" class="text-center">No Clubs Found</th>
+        <?php  }
         ?>
       </tbody>
     </table>

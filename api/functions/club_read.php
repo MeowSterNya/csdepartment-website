@@ -57,9 +57,6 @@
         // set response code - 404 Not found
         http_response_code(404);
 
-        // tell the user no clubs found
-        echo json_encode(
-            array("message" => "No clubs found.")
-        );
+
     }
 ?>

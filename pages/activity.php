@@ -98,6 +98,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
       </thead>
       <tbody>
        <?php
+          if(!empty($activities_arr_json))
+          {
           $activities_arr_php = json_decode($activities_arr_json);
           if ($activities_arr_php != null )
               {
@@ -117,7 +119,12 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
         <?php
             }
-        ?>
+          }
+          else
+          {?>
+              <th scope="col" colspan="4" class="text-center">No Activities Found</th><?php
+          } ?>
+
 
       </tbody>
     </table>
