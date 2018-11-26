@@ -101,6 +101,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
       <tbody>
 
           <?php
+          if(!empty($course_arr_json))
+          {
           $course_arr_php = json_decode($course_arr_json);
           if ($course_arr_php != null )
           {
@@ -123,13 +125,20 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
           <?php
           }
-          ?>
+          }
+          else{?>
+          <th scope="col" colspan="7" class="text-center">No Courses Found</th><?php
+          } ?>
+
 
       </tbody>
     </table>
   </div>
 
   <!-- Edit Form -->
+      <?php
+      if(isset($_GET["courses-edit-edit"]))
+         {?>
   <div class="row justify-content-center align-items-center">
     <form method="post" class="col=5">
       <h5>Edit Course</h5>
@@ -179,7 +188,9 @@ header( "Content-Type: text/html; charset=UTF-8" );
       </div>
     </form>
   </div>
-
+    <?php
+      }
+         ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

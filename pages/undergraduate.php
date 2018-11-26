@@ -1,6 +1,6 @@
 <?php
 require("../includes/authenticate.php");
-//require("../api/functions/undergraduate_read.php");
+require("../api/functions/undergraduate_read.php");
 header( "Access-Control-Allow-Origin: *" );
 header( "Content-Type: text/html; charset=UTF-8" );
 ?>
@@ -99,6 +99,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
       <tbody>
 
           <?php
+          if(!empty($undergraduates_arr_json))
+          {
           $undergraduates_arr_php = json_decode($undergraduates_arr_json);
           if ($undergraduates_arr_php != null )
           {
@@ -119,13 +121,21 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
           <?php
           }
-          ?>
+          }
+          else
+          {?>
+          <th scope="col" colspan="5" class="text-center">No Undergraduates Found</th><?php
+          }?>
+
 
       </tbody>
     </table>
   </div>
 
   <!-- Edit Form -->
+      <?php
+      if(isset($_GET["undergraduate-edit-edit"]))
+         {?>
   <div class="row justify-content-center align-items-center">
     <form method="post" class="col-5">
       <h5>Edit Undergraduate</h5>
@@ -147,7 +157,9 @@ header( "Content-Type: text/html; charset=UTF-8" );
       </div>
     </form>
   </div>
-      
+      <?php
+     }
+      ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

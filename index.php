@@ -77,13 +77,13 @@ if(isset($_SESSION["sessionPass"]))
       </form>
     </div>
   </nav>
-  
+
   <div class="parallax">
     <div class="caption">
       <span class="border">Department of Computer Science</span>
     </div>
   </div>
-  
+
   <div class="py-4 text-center">
     <h1 class="display-4">About Us</h1>
     <p class="lead">The official website for the Department of Computer Science</p>
@@ -97,8 +97,8 @@ if(isset($_SESSION["sessionPass"]))
     <a class="btn btn-primary" href="tel:2222222" role="button"><i class="fas fa-phone"></i> 2222222</a>
   </div>
 
-  <!-- <div class="parallax3"></div> -->
-  
+  <div class="parallax3"></div>
+
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -183,7 +183,7 @@ else
       <span class="border">Department of Computer Science</span>
     </div>
   </div>
-  
+
   <div class="py-4 text-center">
     <h1 class="display-4">About Us</h1>
     <p class="lead">The official website for the Department of Computer Science</p>

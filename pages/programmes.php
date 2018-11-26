@@ -98,6 +98,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
       <tbody>
 
           <?php
+          if(!empty($programme_arr_json))
+          {
           $programme_arr_php = json_decode($programme_arr_json);
           if ($programme_arr_php != null )
           {
@@ -117,13 +119,21 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
           <?php
           }
-          ?>
+          }
+          else
+          {?>
+              <th scope="col" colspan="4" class="text-center">No Programmes Found</th><?php
+          }?>
+
 
       </tbody>
     </table>
   </div>
 
   <!-- Edit Form -->
+      <?php
+      if(isset($_GET["programmes-edit-edit"]))
+         {?>
   <div class="row justify-content-center align-items-center">
     <form method="post" class="col-5">
       <h5>Edit Programme</h5>
@@ -146,7 +156,9 @@ header( "Content-Type: text/html; charset=UTF-8" );
       </div>
     </form>
   </div>
-      
+      <?php
+      }
+         ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

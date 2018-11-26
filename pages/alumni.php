@@ -85,6 +85,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
   <br>
       <?php
+      if(!empty($alumnis_arr_json))
+      {
       $alumnis_arr_php = json_decode($alumnis_arr_json);
       if ($alumnis_arr_php != null )
       {
@@ -116,10 +118,17 @@ header( "Content-Type: text/html; charset=UTF-8" );
     </div>
     <?php
         }
-    ?>
+      }
+      else{?>
+          <h2 class="text-center">No Alumni Found</h2> <?php
+      } ?>
+
   </div>
 
   <!-- Edit Form -->
+      <?php
+      if(isset($_GET["alumni-edit"]))
+      {?>
   <div class="row justify-content-center align-items-center">
     <form method="post" class="col-5">
       <h5 class="modal-title">Edit Alumni</h5>
@@ -149,7 +158,9 @@ header( "Content-Type: text/html; charset=UTF-8" );
       </div>
     </form>
   </div>
-      
+      <?php
+      }
+      ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

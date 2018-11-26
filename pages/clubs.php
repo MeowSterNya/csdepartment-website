@@ -99,35 +99,43 @@ header( "Content-Type: text/html; charset=UTF-8" );
           </tr>
         </thead>
         <tbody>
-        <?php
-            $clubs_arr_php = json_decode($clubs_arr_json);
-            if ($clubs_arr_php != null )
-                {
-                    $allRecords = $clubs_arr_php->records;
-                }
-
-              foreach ($allRecords as $record)
+       <?php
+          if(!empty($clubs_arr_json))
+          {
+          $clubs_arr_php = json_decode($clubs_arr_json);
+          if ($clubs_arr_php != null )
               {
-            ?>
-          <tr>
-            <th scope="row"><?php echo $record->ID; ?></th>
-              <td><?php echo $record->name; ?></td>
-              <td><?php echo $record->description; ?></td>
-              <td><form><button type="submit" name="club-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form></td>
-              <td><form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-club" value="<?php echo $record->ID;?>">Delete</button></form></td>
-          </tr>
-          <?php
-              }
+                  $allRecords = $clubs_arr_php->records;
+
+            }
+            foreach ($allRecords as $record)
+            {
           ?>
-        </tbody>
-      </table>
-    </div>
-    <?php
-    if(isset($_GET["club-edit"])!=null)
-    {
-    ?>
+        <tr>
+          <th scope="row"><?php echo $record->ID; ?></th>
+            <td><?php echo $record->name; ?></td>
+            <td><?php echo $record->description; ?></td>
+            <td><form><button type="submit" name="club-edit" class="btn btn-success btn-sm" value="<?php echo $record->ID;?>">Edit</button></form></td>
+            <td><form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-club" value="<?php echo $record->ID;?>">Delete</button></form></td>
+        </tr>
+
+        <?php
+            }
+
+          }
+          else
+          {?>
+            <th scope="col" colspan="4" class="text-center">No Clubs Found</th>
+        <?php  }
+        ?>
+      </tbody>
+    </table>
+  </div>
+
       <!-- Edit Form -->
       <?php
+      if(isset($_GET['club-edit']))
+      {
         $clubs_arr_one_php = json_decode($clubs_arr_one_json);
         if ($clubs_arr_one_php != null )
         {
@@ -136,6 +144,7 @@ header( "Content-Type: text/html; charset=UTF-8" );
         foreach ($onerecord as $record)
         {
       ?>
+
           <div class="row justify-content-center align-items-center">
             <form method="post" class="col-5">
               <h5>Edit Club</h5>

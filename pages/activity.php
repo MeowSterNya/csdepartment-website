@@ -98,6 +98,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
       </thead>
       <tbody>
        <?php
+          if(!empty($activities_arr_json))
+          {
           $activities_arr_php = json_decode($activities_arr_json);
           if ($activities_arr_php != null )
               {
@@ -117,13 +119,21 @@ header( "Content-Type: text/html; charset=UTF-8" );
 
         <?php
             }
-        ?>
+          }
+          else
+          {?>
+              <th scope="col" colspan="4" class="text-center">No Activities Found</th><?php
+          } ?>
+
 
       </tbody>
     </table>
   </div>
 
   <!-- Edit Form -->
+      <?php
+      if(isset($_GET['alumni-edit']))
+      {?>
   <div class="row justify-content-center align-items-center">
     <form method="post" class="col-5">
       <h5>Edit Activity</h5>
@@ -142,6 +152,9 @@ header( "Content-Type: text/html; charset=UTF-8" );
     </form>
   </div>
 
+  <?php
+        }
+    ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>

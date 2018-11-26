@@ -85,6 +85,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
   <br>
 
       <?php
+      if(!empty($staffs_arr_json))
+      {
       $staffs_arr_php = json_decode($staffs_arr_json);
       if ($staffs_arr_php != null )
       {
@@ -116,10 +118,17 @@ header( "Content-Type: text/html; charset=UTF-8" );
           </div>
           <?php
       }
-          ?>
+      }
+      else{  ?>
+          <h2 class="text-center">No Staff Found</h2> <?php
+      } ?>
+
     </div>
 
   <!-- Edit Form -->
+      <?php
+      if(isset($_GET["staff-edit"]))
+         {?>
   <div class="row justify-content-center align-items-center">
     <form method="post" class="col-5">
       <h5>Edit Staff</h5>
@@ -149,7 +158,9 @@ header( "Content-Type: text/html; charset=UTF-8" );
       </div>
     </form>
   </div>
-      
+      <?php
+      }
+         ?>
   </div>
 
   <script src="../js/jquery-3.3.1.min.js"></script>
