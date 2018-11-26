@@ -1,6 +1,7 @@
 <?php
 require("../includes/authenticate.php");
 require("../api/functions/club_read.php");
+//require("../api/functions/club_read_one.php");
 header( "Access-Control-Allow-Origin: *" );
 header( "Content-Type: text/html; charset=UTF-8" );
 ?>
@@ -108,17 +109,13 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <th scope="row"><?php echo $record->ID; ?></th>
             <td><?php echo $record->name; ?></td>
             <td><?php echo $record->description; ?></td>
-
-            <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal" value="<?php $ID = $record->ID; echo $record->ID;?>">Edit</button></td>
-            <td><form><button type="submit" class="btn btn-danger btn-sm" name="delete-club" value="<?php echo $record->ID;?>">Delete</button></form></td>
+            <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal" value="<?php echo $record->ID;?>">Edit</button></td>
+            <td><form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-club" value="<?php echo $record->ID;?>">Delete</button></form></td>
         </tr>
 
         <?php
-
-
             }
         ?>
-
       </tbody>
     </table>
   </div>
@@ -133,19 +130,28 @@ header( "Content-Type: text/html; charset=UTF-8" );
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+        <?php
+          $clubs_arr_one_php = json_decode($clubs_arr_one_json);
+          if ($clubs_arr_one_php != null )
+              {
+                  $onerecord = $clubs_arr_one_php->records;
+              }
+          foreach ($onerecord as $record)
+          {
+          ?>
         <div class="modal-body">
           <form method="post">
               <div class="form-group">
-                  <label for="name">ID -<?php echo $ID;?></label>
+                  <label for="name">ID -<?php echo $record->ID;?></label>
                   <input type="hidden" class="form-control" name="club-id" value="<?php echo $record->ID; ?>">
               </div>
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control" name="club-name" value="<?php ?>">
+              <input type="text" class="form-control" name="club-name" value="<?php echo $record->name ?>">
             </div>
             <div class="form-group">
               <label for="description">Description</label>
-                <input type="text" class="form-control" name="club-description" value="<?php ?>">
+                <input type="text" class="form-control" name="club-description" value="<?php echo $record->description ?>">
             </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -153,6 +159,9 @@ header( "Content-Type: text/html; charset=UTF-8" );
               </div>
           </form>
         </div>
+        <?php
+            }
+        ?>
 
       </div>
     </div>

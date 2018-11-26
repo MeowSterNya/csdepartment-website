@@ -45,11 +45,11 @@ if(isset($_GET["delete-staff"])) {
                 */
     if($result>0)
     {
-?><script>window.alert("Staff deleted successfully");</script><?php
+        ?><script>window.alert("Staff deleted successfully");</script><?php
     }
     else
     {
-?><script>window.alert("Failed to delete Staff");</script><?php
+        ?><script>window.alert("Failed to delete Staff");</script><?php
     }
 }
 

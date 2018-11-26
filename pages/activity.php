@@ -108,8 +108,8 @@ header( "Content-Type: text/html; charset=UTF-8" );
           <th scope="row"><?php echo $record->ID; ?></th>
             <td><?php echo $record->name; ?></td>
             <td><?php echo $record->description; ?></td>
-          <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
-            <td><form><button type="submit" class="btn btn-danger btn-sm" name="delete-activity" value="<?php echo $record->ID;?>">Delete</button></form></td>
+            <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit-modal">Edit</button></td>
+            <td><form><button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm" name="delete-activity" value="<?php echo $record->ID;?>">Delete</button></form></td>
         </tr>
 
         <?php

@@ -47,7 +47,7 @@
         // set response code - 200 OK
         http_response_code(200);
 
-        // show clubs data in json format
+        // encode clubs data in json format
         $clubs_arr_json = json_encode($clubs_arr);
 
     }
